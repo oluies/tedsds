@@ -54,6 +54,8 @@ object SimpleExample {
 
     println(s"Count: ${dft.count()}")
 
+    sc.stop()
+
   }
 }
 // scalastyle:on println
