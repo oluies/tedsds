@@ -42,11 +42,11 @@ object MulticlassMetricsFortedsds {
       arg[String]("<input>")
         .required()
         .text("hdfs input paths to a parquet dataset ")
-        .action((x, c) => c.copy(input = x))
+        .action((x, c) => c.copy(input = x.trim))
       arg[String]("<modelsave>")
         .optional()
         .text("hdfs output paths saved model ")
-        .action((x, c) => c.copy(model = x))
+        .action((x, c) => c.copy(model = x.trim))
       note(
         """
           |For example, the following command runs this app on a  dataset:
