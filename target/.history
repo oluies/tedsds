@@ -53,3 +53,8 @@ assembly
 ls
 qir
 exit
+compile
+git commit -a 
+git commit -a -m "simpleexample" 
+compile
+git commit --amend -a -m "simpleexample" 
