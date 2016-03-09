@@ -50,7 +50,7 @@ object SimpleExample {
     import sqlContext.implicits._
     val dft = sc.parallelize(data).toDF(schema: _*)
 
-    dft.write.parquet("/user/zeppelin/pm.scaledfeatures")
+    dft.write.parquet("/user/xadmin/pm.scaledfeatures")
 
     println(s"Count: ${dft.count()}")
 
