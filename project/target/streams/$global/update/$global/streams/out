@@ -90,20 +90,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-git;0.8.5 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.sbt#sbt-git;0.8.5 {compile=[default(compile)]}[0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-git;0.8.5 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: com.typesafe.sbt#sbt-git;0.8.5 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: no ivy file found for com.typesafe.sbt#sbt-git;0.8.5[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: found md file for com.typesafe.sbt#sbt-git;0.8.5[0m
-[0m[[0mdebug[0m] [0m		=> https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml (0.8.5)[0m
-[0m[[0mdebug[0m] [0mdownloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml ...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-git;0.8.5!ivy.xml(ivy.original) (2197ms)[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.sbt#sbt-git;0.8.5 in sbt-plugin-releases[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.sbt#sbt-git;0.8.5[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe.sbt#sbt-git;0.8.5 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r {compile=[default(compile)]}[0m
@@ -2532,12 +2520,7 @@
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spark-packages#sbt-spark-package;0.2.3!sbt-spark-package.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar ...[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
-[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-git;0.8.5!sbt-git.jar (4164ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbt#sbt-git;0.8.5!sbt-git.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.12.0!sbt-assembly.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaj#scalaj-http_2.10;1.1.4!scalaj-http_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.directory.studio#org.apache.commons.codec;1.8!org.apache.commons.codec.jar[0m
@@ -2545,17 +2528,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-codec#commons-codec;1.8!commons-codec.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r!org.eclipse.jgit.pgm.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
-[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/args4j/args4j/2.0.12/jars/args4j.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] args4j#args4j;2.0.12!args4j.jar (1325ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] args4j#args4j;2.0.12!args4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-compress;1.6!commons-compress.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r!org.eclipse.jgit.archive.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r!org.eclipse.jgit.jar[0m
@@ -2564,29 +2537,9 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.osgi#org.osgi.core;4.3.1!org.osgi.core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jcraft#jsch;0.1.50!jsch.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.googlecode.javaewah#JavaEWAH;0.7.9!JavaEWAH.jar(bundle)[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
-[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.httpcomponents#httpclient;4.1.3!httpclient.jar (821ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.1.3!httpclient.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.2!slf4j-api.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
-[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
-[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
-[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.httpcomponents#httpcore;4.1.4!httpcore.jar (668ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpcore;4.1.4!httpcore.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-logging#commons-logging;1.1.1!commons-logging.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#sbt;0.13.8!sbt.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#main;0.13.8!main.jar[0m
@@ -2643,7 +2596,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 10016ms :: artifacts dl 10895ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1062ms :: artifacts dl 33ms[0m
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT compile produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT runtime produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT test produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-test.xml[0m
@@ -2657,5 +2610,5 @@
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT docs produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT pom produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT scala-tool produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (10016ms resolve - 10895ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (1062ms resolve - 33ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
