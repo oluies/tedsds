@@ -1,6 +1,6 @@
 *.class
 *.log
-
+projectFilesBackup*
 # sbt specific
 .cache
 .history
