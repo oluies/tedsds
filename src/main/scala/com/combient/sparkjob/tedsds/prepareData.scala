@@ -15,6 +15,7 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.mllib.stat.{MultivariateStatisticalSummary,Statistics}
 import scopt.OptionParser
+import org.apache.spark.sql.hive.HiveContext
 
 
 object PrepareData {
@@ -58,8 +59,9 @@ object PrepareData {
     val conf = new SparkConf().setAppName("SimpleExample")
 
     val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
+    val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
+
 
     val customSchema = StructType(Seq(
       StructField("id",      IntegerType,nullable = true),

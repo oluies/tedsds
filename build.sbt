@@ -8,7 +8,7 @@ resolvers += "bintray-spark-packages" at "https://dl.bintray.com/spark-packages/
 
 sparkVersion := "1.6.0"
 
-sparkComponents ++= Seq("streaming", "sql","mllib","graphx")
+sparkComponents ++= Seq("streaming", "sql","mllib","graphx","hive")
 
 spDependencies += "com.databricks/spark-csv_2.10:1.4.0"
 
