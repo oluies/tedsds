@@ -24,7 +24,7 @@ import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{Row, SQLContext}
+import org.apache.spark.sql.{SaveMode, Row, SQLContext}
 
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
@@ -38,7 +38,7 @@ object MulticlassMetricsFortedsds {
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
-      head("MulticlassMetricsFortedsds: an example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
+      head("MulticlassMetricsFortedsds: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
       arg[String]("<input>")
         .optional()
         .text("hdfs input paths to a parquet dataset ")
@@ -77,6 +77,7 @@ object MulticlassMetricsFortedsds {
     // Load training data
     val scaledDF = sqlContext.read.parquet(input)
 
+
     // Index labels, adding metadata to the label column.
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
@@ -97,7 +98,7 @@ object MulticlassMetricsFortedsds {
 
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
-      .setNumClasses(10)
+      .setNumClasses(3)
       .run(training)
 
     // Compute raw scores on the test set
