@@ -40,8 +40,12 @@ object MulticlassMetricsFortedsds {
     val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
       head("MulticlassMetricsFortedsds: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
       arg[String]("<input>")
-        .optional()
+        .required()
         .text("hdfs input paths to a parquet dataset ")
+        .action((x, c) => c.copy(input = x))
+      arg[String]("<modelsave>")
+        .optional()
+        .text("hdfs output paths saved model ")
         .action((x, c) => c.copy(input = x))
       note(
         """
@@ -49,7 +53,8 @@ object MulticlassMetricsFortedsds {
           |
           | bin/spark-submit --class com.combient.sparkjob.tedsds.MulticlassMetricsFortedsds \
           |  jarfile.jar \
-          |  /share/tedsds/scaledd
+          |  /share/tedsds/scaledd \
+          |  /share/tedsds/savedmodel
         """.stripMargin)
     }
 
@@ -68,7 +73,6 @@ object MulticlassMetricsFortedsds {
     val sc = new SparkContext(conf)
 
     val input = params.input
-    //val output = args(2)
     println(s"Input dataset = $input")
 
 
@@ -96,10 +100,17 @@ object MulticlassMetricsFortedsds {
     val Array(training, test) = data.randomSplit(Array(0.6, 0.4), seed = 11L)
     training.cache()
 
+    data.unpersist(blocking = false)
+
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
       .setNumClasses(3)
       .run(training)
+
+    if(params.modelpath)
+      model.save(sc, "%sMulticlassMetricsExamplesaved".format(params.modelpath))
+      print("Saved model as ")
+    }
 
     // Compute raw scores on the test set
     val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
@@ -146,10 +157,10 @@ object MulticlassMetricsFortedsds {
     }
 
     // Weighted stats
-    metricsStrb append (s"\nWeighted precision: ${metrics.weightedPrecision}")
-    metricsStrb append (s"\nWeighted recall: ${metrics.weightedRecall}")
-    metricsStrb append (s"\nWeighted F1 score: ${metrics.weightedFMeasure}")
-    metricsStrb append (s"\nWeighted false positive rate: ${metrics.weightedFalsePositiveRate}")
+    metricsStrb append s"\nWeighted precision: ${metrics.weightedPrecision}"
+    metricsStrb append s"\nWeighted recall: ${metrics.weightedRecall}"
+    metricsStrb append s"\nWeighted F1 score: ${metrics.weightedFMeasure}"
+    metricsStrb append s"\nWeighted false positive rate: ${metrics.weightedFalsePositiveRate}"
     println("***")
     println(metricsStrb.toString())
 
