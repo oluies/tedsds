@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Vendor: com.databricks
+Implementation-Title: spark-csv
+Implementation-Version: 1.4.0
+Implementation-Vendor-Id: com.databricks
+Specification-Vendor: com.databricks
+Specification-Title: spark-csv
+Specification-Version: 1.4.0
+

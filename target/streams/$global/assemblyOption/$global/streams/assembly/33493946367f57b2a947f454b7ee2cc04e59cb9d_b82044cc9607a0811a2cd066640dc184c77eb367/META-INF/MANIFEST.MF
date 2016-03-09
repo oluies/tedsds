@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Export-Package: com.univocity.parsers.tsv;uses:="com.univocity.parsers
+ .common";version="1.5.1",com.univocity.parsers.csv;uses:="com.univoci
+ ty.parsers.common,com.univocity.parsers.common.input";version="1.5.1"
+ ,com.univocity.parsers.conversions;version="1.5.1",com.univocity.pars
+ ers.common;uses:="com.univocity.parsers.common.fields,com.univocity.p
+ arsers.common.input,com.univocity.parsers.common.processor";version="
+ 1.5.1",com.univocity.parsers.common.processor;uses:="com.univocity.pa
+ rsers.common";version="1.5.1",com.univocity.parsers.common.input;uses
+ :="com.univocity.parsers.common";version="1.5.1",com.univocity.parser
+ s.common.input.concurrent;uses:="com.univocity.parsers.common.input";
+ version="1.5.1",com.univocity.parsers.common.fields;uses:="com.univoc
+ ity.parsers.conversions";version="1.5.1",com.univocity.parsers.fixed;
+ uses:="com.univocity.parsers.common,com.univocity.parsers.common.inpu
+ t";version="1.5.1",com.univocity.parsers.annotations;uses:="com.univo
+ city.parsers.conversions";version="1.5.1",com.univocity.parsers.annot
+ ations.helpers;uses:="com.univocity.parsers.conversions";version="1.5
+ .1"
+Implementation-Title: univocity-parsers
+Implementation-Version: 1.5.1
+Specification-Vendor: uniVocity Software Pty Ltd
+Built-By: jbax
+Tool: Bnd-2.3.0.201405100607
+Bundle-Name: univocity-parsers
+Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Bundle-Vendor: uniVocity Software Pty Ltd
+Implementation-Vendor: uniVocity Software Pty Ltd
+Implementation-Vendor-Id: com.univocity
+Bundle-Version: 1.5.1
+Build-Jdk: 1.6.0_45
+Bnd-LastModified: 1428533763178
+Bundle-ManifestVersion: 2
+Specification-Title: univocity-parsers
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-Description: uniVocity's open source parsers for processing dif
+ ferent text formats using a consistent API
+Bundle-SymbolicName: com.univocity.parsers
+Bundle-DocURL: www.univocity.com
+Specification-Version: 1.5.1
+Archiver-Version: Plexus Archiver
+

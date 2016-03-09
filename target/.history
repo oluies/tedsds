@@ -1,0 +1,55 @@
+compile
+sbt
+exit
+gen-idea
+git
+:q
+exit
+combile
+compile
+gen-idea
+compile
+w
+:q
+exit
+gen-sbt
+gen-idea
+compile
+cd /Users/olu/src/combient/sparkintellij/src/main/scala/org/apache/spark/examples/
+ls
+quit
+exit
+sbt
+cd ..
+ls
+quit
+ls
+exit
+compile
+cd /src/main/scala/org/apache/spark/examples/
+ls
+quit
+exit
+compile
+gen-idea
+quit
+exit
+compile
+run
+sbt assembly
+assembly
+jar
+assembly
+clean
+assembly
+clean
+assembly
+clean
+assembly
+reload
+assembly
+reload
+assembly
+ls
+qir
+exit
