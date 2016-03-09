@@ -6,14 +6,16 @@ package com.combient.sparkjob.tedsds
 
 
 
-import org.apache.spark._
 import org.apache.spark.ml.feature.{MinMaxScaler, VectorAssembler}
 import org.apache.spark.sql.{Column, SaveMode, SQLContext, GroupedData}
 import org.apache.spark.sql.types.{StructType,DoubleType, StructField, StringType, IntegerType}
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.expressions.Window
 import scopt.OptionParser
+import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.hive.HiveContext
+import org.apache.spark.sql.expressions.Window
+
+
 
 
 object PrepareData {
