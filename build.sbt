@@ -1,4 +1,4 @@
-name := "sparkintellij2"
+name := "tedsds"
 
 version := "1.0"
 
@@ -20,6 +20,6 @@ libraryDependencies ++= {
   val akkaV = "2.3.0"
   val sprayV = "1.3.1"
   Seq(
-    "com.github.scopt" %% "scopt" % "3.2.0"
+    "com.github.scopt" %% "scopt" % "3.4.0"
   )
 }

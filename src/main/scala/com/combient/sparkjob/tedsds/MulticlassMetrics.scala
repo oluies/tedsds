@@ -27,15 +27,48 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Row, SQLContext}
 
 import org.apache.spark.{SparkConf, SparkContext}
+import scopt.OptionParser
 
 object MulticlassMetricsFortedsds {
 
+  case class Params(input: String = null)
+
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setAppName("MulticlassMetricsExample")
+
+    val defaultParams = Params()
+
+    val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
+      head("MulticlassMetricsFortedsds: an example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
+      arg[String]("<input>")
+        .optional()
+        .text("hdfs input paths to a parquet dataset ")
+        .action((x, c) => c.copy(input = x))
+      note(
+        """
+          |For example, the following command runs this app on a  dataset:
+          |
+          | bin/spark-submit --class com.combient.sparkjob.tedsds.MulticlassMetricsFortedsds \
+          |  jarfile.jar \
+          |  /share/tedsds/scaledd
+        """.stripMargin)
+    }
+
+
+    parser.parse(args, defaultParams).map { params =>
+      run(params)
+    } getOrElse {
+      System.exit(1)
+    }
+
+  }
+
+  def run(params: Params) {
+
+    val conf = new SparkConf().setAppName(s"MulticlassMetricsExample with $params")
     val sc = new SparkContext(conf)
 
-    val input = args(1).orElse("""/share/tedsds/scaleddf""").toString()
-    val output = args(2)
+    val input = params.input
+    //val output = args(2)
     println(s"Input dataset = $input")
 
 
