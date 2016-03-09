@@ -115,7 +115,7 @@ object MulticlassMetricsFortedsds {
 
     if(params.model != ""){
       model.save(sc, "%sMulticlassMetricsExamplesaved".format(params.model))
-      print("Saved model as ")
+      print("Saved model as %s".format(params.model))
     }
 
     // Instantiate metrics object
