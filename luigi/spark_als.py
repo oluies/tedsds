@@ -78,7 +78,7 @@ class SparkALS(SparkSubmitTask):
     executor_memory = '3g'
     num_executors = luigi.IntParameter(default=100)
 
-    app = 'my-spark-assembly.jar'
+    app = '/home/xadmin/src/combient/tedsds/target/scala-2.10/sparkintellij2-assembly-1.0.jar'
     entry_class = 'com.spotify.spark.ImplicitALS'
 
     def app_options(self):
