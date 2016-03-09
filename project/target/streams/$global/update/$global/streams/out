@@ -1,17 +1,17 @@
-[0m[[0minfo[0m] [0mUpdating {file:/Users/olu/src/combient/sparkintellij01/project/}sparkintellij01-build...[0m
-[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#sparkintellij01-build;0.1-SNAPSHOT[0m
+[0m[[0minfo[0m] [0mUpdating {file:/Users/olu/src/combient/tedsds/project/}tedsds-build...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#tedsds-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.spark-packages#sbt-spark-package;0.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.spark-packages#sbt-spark-package;0.2.3 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.spark-packages#sbt-spark-package;0.2.3[0m
 [0m[[0mdebug[0m] [0m	found org.spark-packages#sbt-spark-package;0.2.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.eed3si9n#sbt-assembly;0.12.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.eed3si9n#sbt-assembly;0.12.0 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
@@ -59,14 +59,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.github.mpeltonen#sbt-idea;1.6.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.6.0 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.6.0[0m
 [0m[[0mdebug[0m] [0m	found com.github.mpeltonen#sbt-idea;1.6.0 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -84,15 +84,173 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-git;0.8.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.sbt#sbt-git;0.8.5 {compile=[default(compile)]}[0m
+[0m[[0minfo[0m] [0mResolving com.typesafe.sbt#sbt-git;0.8.5 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain-delegate: Checking cache for: dependency: com.typesafe.sbt#sbt-git;0.8.5 {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: no ivy file found for com.typesafe.sbt#sbt-git;0.8.5[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: found md file for com.typesafe.sbt#sbt-git;0.8.5[0m
+[0m[[0mdebug[0m] [0m		=> https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml (0.8.5)[0m
+[0m[[0mdebug[0m] [0mdownloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml ...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-git;0.8.5!ivy.xml(ivy.original) (2197ms)[0m
+[0m[[0mdebug[0m] [0m	found com.typesafe.sbt#sbt-git;0.8.5 in sbt-plugin-releases[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r[0m
+[0m[[0mdebug[0m] [0m	found org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving args4j#args4j;2.0.12 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: args4j#args4j;2.0.12 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: args4j#args4j;2.0.12[0m
+[0m[[0mdebug[0m] [0m	found args4j#args4j;2.0.12 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.apache.commons#commons-compress;1.6 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.commons#commons-compress;1.6 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.commons#commons-compress;1.6[0m
+[0m[[0mdebug[0m] [0m	found org.apache.commons#commons-compress;1.6 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.tukaani#xz;1.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.tukaani#xz;1.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.tukaani#xz;1.4[0m
+[0m[[0mdebug[0m] [0m	found org.tukaani#xz;1.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r[0m
+[0m[[0mdebug[0m] [0m	found org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r[0m
+[0m[[0mdebug[0m] [0m	found org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.jcraft#jsch;0.1.50 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.jcraft#jsch;0.1.50 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.jcraft#jsch;0.1.50[0m
+[0m[[0mdebug[0m] [0m	found com.jcraft#jsch;0.1.50 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving com.googlecode.javaewah#JavaEWAH;0.7.9 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.googlecode.javaewah#JavaEWAH;0.7.9 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.googlecode.javaewah#JavaEWAH;0.7.9[0m
+[0m[[0mdebug[0m] [0m	found com.googlecode.javaewah#JavaEWAH;0.7.9 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpclient;4.1.3 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.httpcomponents#httpclient;4.1.3 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.httpcomponents#httpclient;4.1.3[0m
+[0m[[0mdebug[0m] [0m	found org.apache.httpcomponents#httpclient;4.1.3 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.apache.httpcomponents#httpcore;4.1.4 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.httpcomponents#httpcore;4.1.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.httpcomponents#httpcore;4.1.4[0m
+[0m[[0mdebug[0m] [0m	found org.apache.httpcomponents#httpcore;4.1.4 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving commons-logging#commons-logging;1.1.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-logging#commons-logging;1.1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-logging#commons-logging;1.1.1[0m
+[0m[[0mdebug[0m] [0m	found commons-logging#commons-logging;1.1.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.slf4j#slf4j-api;1.7.2 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.slf4j#slf4j-api;1.7.2[0m
+[0m[[0mdebug[0m] [0m	found org.slf4j#slf4j-api;1.7.2 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.osgi#org.osgi.core;4.3.1 ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.osgi#org.osgi.core;4.3.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.osgi#org.osgi.core;4.3.1[0m
+[0m[[0mdebug[0m] [0m	found org.osgi#org.osgi.core;4.3.1 in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r[0m
+[0m[[0mdebug[0m] [0m	found org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [compile->master(compile)][0m
@@ -113,10 +271,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -128,16 +286,92 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [compile->master(compile)][0m
@@ -158,10 +392,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -173,16 +407,92 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-sbt#sbt;0.13.8 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8[0m
@@ -866,13 +1176,13 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [compile->master(compile)][0m
@@ -893,10 +1203,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -908,16 +1218,92 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
@@ -1088,9 +1474,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt#collections;0.13.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt.ivy#ivy;2.3.0-sbt-fccfbd44c9f64523b61398a0155784dcbaeae28f [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt#serialization_2.10;0.1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
@@ -1380,12 +1767,12 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [runtime-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [compile->master(compile)][0m
@@ -1406,10 +1793,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -1421,18 +1808,94 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [test-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->com.eed3si9n#sbt-assembly;0.12.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.scalaj#scalaj-http_2.10;1.1.4 [compile->master(compile)][0m
@@ -1453,10 +1916,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.spark-packages#sbt-spark-package;0.2.3->org.apache.directory.studio#org.apache.commons.codec;1.8 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.studio#org.apache.commons.codec;1.8->commons-codec#commons-codec;1.8 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.spark-packages#sbt-spark-package;0.2.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
@@ -1468,16 +1931,92 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.3 {provided=[compile(*), provided(*), runtime(*), master(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {provided=[compile(*), provided(*), runtime(*), master(compile)]}[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [provided][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->com.typesafe.sbt#sbt-git;0.8.5 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->args4j#args4j;2.0.12 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.commons#commons-compress;1.6->org.tukaani#xz;1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.apache.commons#commons-compress;1.6 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.jcraft#jsch;0.1.50 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->com.googlecode.javaewah#JavaEWAH;0.7.9 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.apache.httpcomponents#httpclient;4.1.3 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->org.apache.httpcomponents#httpcore;4.1.4 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-logging#commons-logging;1.1.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.4 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.httpcomponents#httpclient;4.1.3->commons-codec#commons-codec;1.8 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r->org.slf4j#slf4j-api;1.7.2 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r->org.osgi#org.osgi.core;4.3.1 [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r->org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r [runtime->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbt#sbt-git;0.8.5->org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-sbt#sbt;0.13.8 [provided->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->compile][0m
@@ -1648,9 +2187,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt#collections;0.13.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt.ivy#ivy;2.3.0-sbt-fccfbd44c9f64523b61398a0155784dcbaeae28f [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.46 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->com.jcraft#jsch;0.1.50 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#ivy;0.13.8->org.scala-sbt#serialization_2.10;0.1.1 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang#scala-library;2.10.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang#scala-library;2.10.4 [compile->runtime][0m
@@ -1940,18 +2480,18 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.9.3 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.4 {provided=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.9.3 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.4 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [plugin][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [sources][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [docs][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [docs][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [pom][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for default#sparkintellij01-build;0.1-SNAPSHOT [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#tedsds-build;0.1-SNAPSHOT [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-library;2.10.4 [compile->default][0m
@@ -1969,8 +2509,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#scala-reflect;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.4->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-compiler;2.10.4 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.4->org.scala-lang#jline;2.10.4 [optional->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.4 {optional=[compile(*), master(*)]}[0m
@@ -1983,21 +2523,71 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.4->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#sparkintellij01-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#tedsds-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in cache[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.spark-packages#sbt-spark-package;0.2.3!sbt-spark-package.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar ...[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
+[0m[[0mdebug[0m] [0m	sbt-plugin-releases: downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-git/scala_2.10/sbt_0.13/0.8.5/jars/sbt-git.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.typesafe.sbt#sbt-git;0.8.5!sbt-git.jar (4164ms)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.12.0!sbt-assembly.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaj#scalaj-http_2.10;1.1.4!scalaj-http_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.directory.studio#org.apache.commons.codec;1.8!org.apache.commons.codec.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.4!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-codec#commons-codec;1.8!commons-codec.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit.pgm;3.7.0.201502260915-r!org.eclipse.jgit.pgm.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/args4j/args4j/2.0.12/jars/args4j.jar[0m
+[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/args4j/args4j/2.0.12/jars/args4j.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/args4j/args4j/2.0.12/args4j-2.0.12.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] args4j#args4j;2.0.12!args4j.jar (1325ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-compress;1.6!commons-compress.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit.archive;3.7.0.201502260915-r!org.eclipse.jgit.archive.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit;3.7.0.201502260915-r!org.eclipse.jgit.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.eclipse.jgit#org.eclipse.jgit.ui;3.7.0.201502260915-r!org.eclipse.jgit.ui.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.tukaani#xz;1.4!xz.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.osgi#org.osgi.core;4.3.1!org.osgi.core.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jcraft#jsch;0.1.50!jsch.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.googlecode.javaewah#JavaEWAH;0.7.9!JavaEWAH.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
+[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/org.apache.httpcomponents/httpclient/4.1.3/jars/httpclient.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.1.3/httpclient-4.1.3.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.httpcomponents#httpclient;4.1.3!httpclient.jar (821ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.slf4j#slf4j-api;1.7.2!slf4j-api.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
+[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
+[0m[[0mdebug[0m] [0m		tried /Users/olu/.ivy2/local/org.apache.httpcomponents/httpcore/4.1.4/jars/httpcore.jar[0m
+[0m[[0mdebug[0m] [0m		tried https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
+[0m[[0minfo[0m] [0mdownloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar ...[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
+[0m[[0mdebug[0m] [0m	public: downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.1.4/httpcore-4.1.4.jar[0m
+[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.apache.httpcomponents#httpcore;4.1.4!httpcore.jar (668ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-logging#commons-logging;1.1.1!commons-logging.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#sbt;0.13.8!sbt.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#main;0.13.8!main.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.8!compiler-interface-bin.jar[0m
@@ -2053,19 +2643,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 1145ms :: artifacts dl 28ms[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT compile produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT runtime produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT test produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT provided produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT optional produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT compile-internal produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT runtime-internal produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT test-internal produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT plugin produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT sources produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT docs produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT pom produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#sparkintellij01-build;0.1-SNAPSHOT scala-tool produced in /Users/olu/src/combient/sparkintellij01/project/target/resolution-cache/reports/default-sparkintellij01-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (1145ms resolve - 28ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 10016ms :: artifacts dl 10895ms[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT compile produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT runtime produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT test produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT provided produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT optional produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT compile-internal produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT runtime-internal produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT test-internal produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT plugin produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT sources produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT docs produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT pom produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#tedsds-build;0.1-SNAPSHOT scala-tool produced in /Users/olu/src/combient/tedsds/project/target/resolution-cache/reports/default-tedsds-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (10016ms resolve - 10895ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
