@@ -5,28 +5,61 @@ package com.combient.sparkjob.tedsds
   */
 
 
+import com.combient.sparkjob.tedsds.MulticlassMetricsFortedsds.Params
 import org.apache.hadoop.io.compress.GzipCodec
 import org.apache.spark._
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.ml.feature.{MinMaxScaler, VectorAssembler}
+import org.apache.spark.sql.{Column, SaveMode, SQLContext, GroupedData}
 import org.apache.spark.sql.types.{StructType,DoubleType, StructField, StringType, IntegerType}
-import org.apache.spark.sql.GroupedData
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
-import org.apache.spark.sql.SQLContext
 import org.apache.spark.mllib.stat.{MultivariateStatisticalSummary,Statistics}
+import scopt.OptionParser
 
 
-object prepareData {
+object PrepareData {
+
+  case class Params(input: String = null,output: String = null)
 
   def main(args: Array[String]) {
+    val defaultParams = Params()
+
+    val parser = new OptionParser[Params]("Prepare data for sds") {
+      head("PrepareData")
+        arg[String]("<input>")
+        .required()
+        .text("hdfs input paths tsv dataset ")
+        .action((x, c) => c.copy(input = x.trim))
+      arg[String]("<modelsave>")
+        .required()
+        .text("hdfs output paths parquet output ")
+        .action((x, c) => c.copy(output = x.trim))
+      note(
+        """
+          |For example, the following command runs this app on a  dataset:
+          |
+          | bin/spark-submit --class com.combient.sparkjob.tedsds.PrepareData \
+          |  jarfile.jar \
+          |  "/user/zeppelin/pdm001/tmp.83h1YRpXM2/train_FD001.txt" \
+          |  "/share/tedsds/scaledd"
+        """.stripMargin)
+    }
+
+
+    parser.parse(args, defaultParams).map { params =>
+      run(params)
+    } getOrElse {
+      System.exit(1)
+    }
+
+  }
+
+  def run(params: Params) {
     val conf = new SparkConf().setAppName("SimpleExample")
 
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
-
-    val input = args(1)
-    val output = args(2)
 
     val customSchema = StructType(Seq(
       StructField("id",      IntegerType,nullable = true),
@@ -61,7 +94,7 @@ object prepareData {
       .option("header", "false")
       .option("delimiter"," ")
       .schema(customSchema)
-      .load("/user/zeppelin/pdm001/tmp.83h1YRpXM2/train_FD001.txt")
+      .load(params.input)
 
     df.persist()
 
@@ -84,7 +117,7 @@ object prepareData {
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val w = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
 
-    //def getcols(id:String):Seq[Column] =  Seq(mean($"s"+id).over(w).as("a"+id) sqrt( sum(pow($"s"+id -  mean($"s"+id).over(w),2)).over(w) / 5).as("sd"+id))
+    //todo: generate the select columns
 
     val x = withrul.select('*,
       mean($"s1").over(w).as("a1"),
@@ -151,8 +184,28 @@ object prepareData {
       sqrt( sum(pow($"s21" -  mean($"s21").over(w),2)).over(w) / 5).as("sd21")
     )
 
-    x.s
+    val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2"))
 
+    print(s"Filter away these columns for the features ${columns}")
+
+    // columns to feature vector
+    val assembler = new VectorAssembler()
+      .setInputCols(columns.toArray)
+      .setOutputCol("features")
+
+    // scale the features
+    val scaler = new MinMaxScaler()
+      .setInputCol("features")
+      .setOutputCol("scaledFeatures")
+
+    val withFeatures = assembler.transform(x)
+
+    //drop featurescolumn
+    withFeatures.drop("features")
+
+    val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
+
+    scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
 
     sc.stop()
   }
