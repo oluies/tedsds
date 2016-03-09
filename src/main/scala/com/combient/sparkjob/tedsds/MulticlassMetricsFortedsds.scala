@@ -31,7 +31,7 @@ import scopt.OptionParser
 
 object MulticlassMetricsFortedsds {
 
-  case class Params(input: String = null)
+  case class Params(input: String = null,model: String = null)
 
   def main(args: Array[String]): Unit = {
 
@@ -46,7 +46,7 @@ object MulticlassMetricsFortedsds {
       arg[String]("<modelsave>")
         .optional()
         .text("hdfs output paths saved model ")
-        .action((x, c) => c.copy(input = x))
+        .action((x, c) => c.copy(model = x))
       note(
         """
           |For example, the following command runs this app on a  dataset:
@@ -107,15 +107,15 @@ object MulticlassMetricsFortedsds {
       .setNumClasses(3)
       .run(training)
 
-    if(params.modelpath)
-      model.save(sc, "%sMulticlassMetricsExamplesaved".format(params.modelpath))
-      print("Saved model as ")
-    }
-
     // Compute raw scores on the test set
     val predictionAndLabels = test.map { case LabeledPoint(label, features) =>
       val prediction = model.predict(features)
       (prediction, label)
+    }
+
+    if(params.model != ""){
+      model.save(sc, "%sMulticlassMetricsExamplesaved".format(params.model))
+      print("Saved model as ")
     }
 
     // Instantiate metrics object
