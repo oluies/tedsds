@@ -5,15 +5,13 @@ package com.combient.sparkjob.tedsds
   */
 
 
-import com.combient.sparkjob.tedsds.MulticlassMetricsFortedsds.Params
-import org.apache.hadoop.io.compress.GzipCodec
+
 import org.apache.spark._
 import org.apache.spark.ml.feature.{MinMaxScaler, VectorAssembler}
 import org.apache.spark.sql.{Column, SaveMode, SQLContext, GroupedData}
 import org.apache.spark.sql.types.{StructType,DoubleType, StructField, StringType, IntegerType}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.Window
-import org.apache.spark.mllib.stat.{MultivariateStatisticalSummary,Statistics}
 import scopt.OptionParser
 import org.apache.spark.sql.hive.HiveContext
 
@@ -56,12 +54,11 @@ object PrepareData {
   }
 
   def run(params: Params) {
-    val conf = new SparkConf().setAppName("SimpleExample")
+    val conf = new SparkConf().setAppName("PrepareData")
 
     val sc = new SparkContext(conf)
     val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
-
 
     val customSchema = StructType(Seq(
       StructField("id",      IntegerType,nullable = true),
