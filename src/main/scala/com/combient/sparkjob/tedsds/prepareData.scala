@@ -28,11 +28,11 @@ object PrepareData {
 
     val parser = new OptionParser[Params]("Prepare data for sds") {
       head("PrepareData")
-        arg[String]("<input>")
+        arg[String]("<input_tsv>")
         .required()
         .text("hdfs input paths tsv dataset ")
         .action((x, c) => c.copy(input = x.trim))
-      arg[String]("<modelsave>")
+      arg[String]("<output_parquet>")
         .required()
         .text("hdfs output paths parquet output ")
         .action((x, c) => c.copy(output = x.trim))
@@ -62,6 +62,8 @@ object PrepareData {
     val sc = new SparkContext(conf)
     val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
+
+    //todo: generate the select columns
 
     val customSchema = StructType(Seq(
       StructField("id",      IntegerType,nullable = true),
