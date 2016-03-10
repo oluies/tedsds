@@ -106,6 +106,18 @@ class SparkALS(SparkSubmitTask):
         # The corresponding Spark job outputs as GZip format.
         return luigi.contrib.hdfs.HdfsTarget('als-output/', format=luigi.format.Gzip)
 
+    def input(self):
+        """
+        Returns the target output for this task.
+        In this case, a successful execution of this task will create a file in HDFS.
+
+        :return: the target output for this task.
+        :rtype: object (:py:class:`~luigi.target.Target`)
+        """
+        # The corresponding Spark job outputs as GZip format.
+        return luigi.contrib.hdfs.HdfsTarget('als-target/', format=luigi.format.Gzip)
+
+
 
 '''
 // Corresponding example Spark Job, a wrapper around the MLLib ALS job.
