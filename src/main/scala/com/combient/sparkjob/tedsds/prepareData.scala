@@ -121,6 +121,7 @@ object PrepareData {
 
     //todo: generate the select columns
 
+    // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     val x = withrul.select('*,
       mean($"s1").over(w).as("a1"),
       sqrt( sum(pow($"s1" -  mean($"s1").over(w),2)).over(w) / 5).as("sd1"),
