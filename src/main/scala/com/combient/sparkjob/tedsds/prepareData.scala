@@ -116,6 +116,7 @@ object PrepareData {
       .withColumn("label2",when($"rul" <= w0, 2).otherwise(when($"rul" <= w1, 1).otherwise(0))) // add label 2 (1 if under w1, 2 if under w0, zero otherwize)
 
     val windowRange = 5
+    // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val w = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
 
