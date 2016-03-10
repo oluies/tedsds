@@ -9,7 +9,7 @@ import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.functions._
 import org.apache.spark.ml.feature.{MinMaxScaler, VectorAssembler}
-import org.apache.spark.sql.{Column, SaveMode, GroupedData}
+import org.apache.spark.sql.{DataFrame, Column, SaveMode, GroupedData}
 import org.apache.spark.sql.types.{StructType,DoubleType, StructField, StringType, IntegerType}
 import scopt.OptionParser
 import org.apache.spark.{SparkContext, SparkConf}
@@ -91,7 +91,7 @@ object PrepareData {
       StructField("s20",     DoubleType,nullable =true),
       StructField("s21",     DoubleType,nullable =true)))
 
-    val df = sqlContext.read
+    val df: DataFrame = sqlContext.read
       .format("com.databricks.spark.csv")
       .option("header", "false")
       .option("delimiter"," ")
