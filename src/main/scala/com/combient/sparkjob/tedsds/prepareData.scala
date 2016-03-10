@@ -193,6 +193,7 @@ object PrepareData {
 
     print(s"Filter away these columns for the features ${columns}")
 
+    //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
     val assembler = new VectorAssembler()
       .setInputCols(columns.toArray)
