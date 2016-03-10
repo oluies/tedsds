@@ -89,7 +89,7 @@ class TEDSDSMulticlassMetricsFortedsds(SparkSubmitTask):
         master: yarn-client
 
     """
-    inputfile = luigi.Parameter(default='/share/tedsds/input/RUL_FD001.txt')
+    inputfile = luigi.Parameter(default='/share/tedsds/scaleddf')
     outputfile = luigi.Parameter(default=' /share/tedsds/savedmodel')
 
     driver_memory = '2g'
@@ -97,7 +97,7 @@ class TEDSDSMulticlassMetricsFortedsds(SparkSubmitTask):
     num_executors = luigi.IntParameter(default=100)
 
     app = '/home/xadmin/src/combient/tedsds/target/scala-2.10/tedsds-assembly-1.0.jar'
-    entry_class = 'com.combient.sparkjob.tedsds.PrepareData'
+    entry_class = 'com.combient.sparkjob.tedsds.MulticlassMetricsFortedsds'
 
     def app_options(self):
         # These are passed to the Spark main args in the defined order.
