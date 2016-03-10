@@ -1,9 +1,5 @@
 package com.spotify.spark
 
-/**
-  * Created by olu on 09/03/16.
-  */
-package com.spotify.spark
 
 import org.apache.spark._
 import org.apache.spark.mllib.recommendation.{Rating, ALS}
