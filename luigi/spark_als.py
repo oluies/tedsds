@@ -40,7 +40,7 @@ class UserItemMatrix(luigi.Task):
         * `rating`: the day when the data was created.
 
         """
-        w = open(self.output(), 'w')
+        w = self.output().open('w')
         for user in range(self.data_size):
             track = int(random.random() * self.data_size)
             w.write('%d\%d\%f' % (user, track, 1.0))
@@ -73,6 +73,7 @@ class SparkALS(SparkSubmitTask):
 
     """
     data_size = luigi.IntParameter(default=1000)
+    item_type = 'type'
 
     driver_memory = '2g'
     executor_memory = '3g'
