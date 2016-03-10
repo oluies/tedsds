@@ -73,13 +73,12 @@ class SparkALS(SparkSubmitTask):
 
     """
     data_size = luigi.IntParameter(default=1000)
-    item_type = 'type'
 
     driver_memory = '2g'
     executor_memory = '3g'
     num_executors = luigi.IntParameter(default=100)
 
-    app = '/home/xadmin/src/combient/tedsds/target/scala-2.10/sparkintellij2-assembly-1.0.jar'
+    app = '/home/xadmin/src/combient/tedsds/target/scala-2.10/tedsds-assembly-1.0.jar'
     entry_class = 'com.spotify.spark.ImplicitALS'
 
     def app_options(self):
@@ -105,7 +104,7 @@ class SparkALS(SparkSubmitTask):
         :rtype: object (:py:class:`~luigi.target.Target`)
         """
         # The corresponding Spark job outputs as GZip format.
-        return luigi.contrib.hdfs.HdfsTarget('%s/als-output/*' % self.item_type, format=luigi.format.Gzip)
+        return luigi.contrib.hdfs.HdfsTarget('als-output/', format=luigi.format.Gzip)
 
 
 '''

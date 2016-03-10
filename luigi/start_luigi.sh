@@ -19,6 +19,5 @@ echo " Pythonpath "$PYTHONPATH
 export SPARK_YARN_USER_ENV="PYTHONPATH=${PYTHONPATH}"
 
 echo $SPARK_HOME
-PYTHONPATH=''
 luigi $*
 
