@@ -117,6 +117,7 @@ object PrepareData {
 
     val windowRange = 5
     // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
+    //     http://spark.apache.org/docs/latest/sql-programming-guide.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val w = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
 
