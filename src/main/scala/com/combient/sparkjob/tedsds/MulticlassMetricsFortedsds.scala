@@ -76,6 +76,7 @@ object MulticlassMetricsFortedsds {
     println(s"Input dataset = $input")
 
 
+    // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
     // Load training data
