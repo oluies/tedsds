@@ -38,7 +38,7 @@ class TEDSDSPrepareData(SparkSubmitTask):
         master: yarn-client
 
     """
-    inputfile = luigi.Parameter(default='/share/tedsds/input/RUL_FD001.txt')
+    inputfile = luigi.Parameter(default='/share/tedsds/input/train_FD001.txt')
     outputfile = luigi.Parameter(default='/share/tedsds/scaleddf')
 
     driver_memory = '2g'
