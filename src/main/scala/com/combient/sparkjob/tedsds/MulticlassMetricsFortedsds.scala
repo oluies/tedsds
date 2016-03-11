@@ -120,12 +120,14 @@ object MulticlassMetricsFortedsds {
     }
 
     // Instantiate metrics object
-    val metrics = new MulticlassMetrics(predictionAndLabels)
+    val metrics: MulticlassMetrics = new MulticlassMetrics(predictionAndLabels)
 
     // Confusion matrix
     val metricsStrb  = new StringBuilder(1024);
-    metricsStrb append "Confusion matrix:"
+    metricsStrb append " |=================== Confusion matrix =========================="
     metricsStrb append metrics.confusionMatrix
+    metricsStrb append " |=================== Confusion matrix =========================="
+
 
     // Overall Statistics
     val precision = metrics.precision
