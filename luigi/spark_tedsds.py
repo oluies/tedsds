@@ -124,12 +124,20 @@ class TEDSDSMulticlassMetricsFortedsds(SparkSubmitTask):
         # The corresponding Spark job outputs as GZip format.
         return luigi.contrib.hdfs.HdfsTarget(self.outputfile)
 
+class PrepareAllModels(luigi.WrapperTask):
+    def requires(self):
+        yield TEDSDSMulticlassMetricsFortedsds('/share/tedsds/scaleddftest_*','/share/tedsds/modeltest_all')
+
 class PrepareAllData(luigi.WrapperTask):
     def requires(self):
         yield TEDSDSPrepareData('/share/tedsds/input/test_FD001.txt','/share/tedsds/scaleddftest_FD001/')
         yield TEDSDSPrepareData('/share/tedsds/input/test_FD002.txt','/share/tedsds/scaleddftest_FD002/')
         yield TEDSDSPrepareData('/share/tedsds/input/test_FD003.txt','/share/tedsds/scaleddftest_FD003/')
         yield TEDSDSPrepareData('/share/tedsds/input/test_FD004.txt','/share/tedsds/scaleddftest_FD004/')
+        yield TEDSDSPrepareData('/share/tedsds/input/train_FD001.txt','/share/tedsds/scaleddftrain_FD001/')
+        yield TEDSDSPrepareData('/share/tedsds/input/train_FD002.txt','/share/tedsds/scaleddftrain_FD002/')
+        yield TEDSDSPrepareData('/share/tedsds/input/train_FD003.txt','/share/tedsds/scaleddftrain_FD003/')
+        yield TEDSDSPrepareData('/share/tedsds/input/train_FD004.txt','/share/tedsds/scaleddftrain_FD004/')
 
 
 
