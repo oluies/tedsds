@@ -181,7 +181,7 @@ object MulticlassMetricsFortedsds {
       trainPriorProbabilities.zip(cvPriorProbabilities).map {
          case (trainProb, cvProb) => trainProb * cvProb }.sum
     println("*** cvPriorProbabilities for random guess")
-    println(cvPriorProbabilities)
+    println(cvPriorProbabilities.toList)
 
     sc.stop()
   }
