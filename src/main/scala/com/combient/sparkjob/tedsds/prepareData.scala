@@ -206,10 +206,10 @@ object PrepareData {
 
     val withFeatures = assembler.transform(x)
 
-    //drop featurescolumn
-    withFeatures.drop("features")
-
     val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
+
+    //drop featurescolumn
+    scaledDF.drop("features")
 
     scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
 
