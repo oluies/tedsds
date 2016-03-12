@@ -167,6 +167,22 @@ object MulticlassMetricsFortedsds {
     println("***")
     println(metricsStrb.toString())
 
+    def classProbabilities(data: RDD[LabeledPoint]): Array[Double] = {
+      val countsByCategory = data.map(_.label).countByValue()
+      val counts = countsByCategory.toArray.sortBy(_._1).map(_._2)
+      counts.map(_.toDouble / counts.sum)
+    }
+
+
+    // random guess
+    val Array(trainDatat, cvDatat, testDatat) = data.randomSplit(Array(0.8, 0.1, 0.1))
+    val trainPriorProbabilities = classProbabilities(trainDatat)
+    val cvPriorProbabilities: Array[Double] = classProbabilities(testDatat)
+      trainPriorProbabilities.zip(cvPriorProbabilities).map {
+         case (trainProb, cvProb) => trainProb * cvProb }.sum
+    println("*** cvPriorProbabilities for random guess")
+    println(cvPriorProbabilities)
+
     sc.stop()
   }
 }
