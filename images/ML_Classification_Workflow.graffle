@@ -49,6 +49,59 @@
 	<key>GraphicsList</key>
 	<array>
 		<dict>
+			<key>AllowConnections</key>
+			<string>NO</string>
+			<key>Bounds</key>
+			<string>{{685.82768819749913, 71.163844098748996}, {109, 17}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FitText</key>
+			<string>YES</string>
+			<key>Flow</key>
+			<string>Resize</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Font</key>
+				<string>Helvetica-Bold</string>
+				<key>Size</key>
+				<real>14</real>
+			</dict>
+			<key>ID</key>
+			<integer>1268</integer>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+			<key>Text</key>
+			<dict>
+				<key>Text</key>
+				<string>{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\b\fs28 \cf0 predicted label}</string>
+				<key>VerticalPad</key>
+				<real>0.0</real>
+			</dict>
+			<key>Wrap</key>
+			<string>NO</string>
+		</dict>
+		<dict>
 			<key>Class</key>
 			<string>LineGraphic</string>
 			<key>Head</key>
@@ -67,7 +120,7 @@
 			<key>Points</key>
 			<array>
 				<string>{600.66897499999993, 294.72749526547113}</string>
-				<string>{820.85200000000009, 293.13047717281074}</string>
+				<string>{820.85200000000009, 295.22749526547113}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -284,7 +337,7 @@
 			<key>AllowConnections</key>
 			<string>NO</string>
 			<key>Bounds</key>
-			<string>{{676.25000000000011, 59.191733851876506}, {109, 17}}</string>
+			<string>{{426.59163307406209, 286.23172911734764}, {143, 17}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -326,7 +379,7 @@
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\b\fs28 \cf0 predicted label}</string>
+\f0\b\fs28 \cf0 prediction accuracy}</string>
 				<key>VerticalPad</key>
 				<real>0.0</real>
 			</dict>
@@ -846,7 +899,7 @@
 					<key>AllowConnections</key>
 					<string>NO</string>
 					<key>Bounds</key>
-					<string>{{821.28300000000013, 285.78747717281078}, {95.322599999999994, 28}}</string>
+					<string>{{821.28300000000013, 287.88449526547117}, {95.322599999999994, 28}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -891,7 +944,7 @@ Model}</string>
 					<key>AllowConnections</key>
 					<string>NO</string>
 					<key>Bounds</key>
-					<string>{{821.60600000000011, 255.42847717281074}, {86, 14}}</string>
+					<string>{{821.60600000000011, 257.52549526547114}, {86, 14}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -928,7 +981,7 @@ Model}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 1.8}</string>
+\f0\fs24 \cf0 1.6}</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -952,8 +1005,8 @@ Model}</string>
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{821.74400000000014, 270.11947717281078}</string>
-						<string>{916.74400000000014, 270.11947717281078}</string>
+						<string>{821.74400000000014, 272.21649526547117}</string>
+						<string>{916.74400000000014, 272.21649526547117}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -981,7 +1034,7 @@ Model}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{821.35200000000009, 253.63047717281074}, {95, 79}}</string>
+					<string>{{821.35200000000009, 255.72749526547113}, {95, 79}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -1272,7 +1325,7 @@ Model(s)}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 1.4}</string>
+\f0\fs24 \cf0 1.3}</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1457,7 +1510,7 @@ Metric}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 1.7}</string>
+\f0\fs24 \cf0 1.5}</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1879,7 +1932,7 @@ Metric}</string>
 {\colortbl;\red255\green255\blue255;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 1.5}</string>
+\f0\fs24 \cf0 1.4}</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -2325,7 +2378,7 @@ Training Data}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2016-03-18 09:19:56 +0000</string>
+	<string>2016-03-18 09:28:40 +0000</string>
 	<key>Modifier</key>
 	<string>Orjan lundberg</string>
 	<key>NotesVisible</key>
