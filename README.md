@@ -1,6 +1,8 @@
 # tedsds
 "Spark Turbofan Engine Degradation Simulation Data Set”
 
+Uses the dataset from [1] to create a demostration of a machine learning setup for a predictive maintainance scenario.
+
 References: 
 
 1. A. Saxena, K. Goebel, D. Simon, and N. Eklund, "Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation", in the Proceedings of the Ist International Conference on Prognostics and Health Management (PHM08), Denver CO, Oct 2008., retrieved feb. 2016
