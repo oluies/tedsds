@@ -1,5 +1,5 @@
 # tedsds
-"Spark Turbofan Engine Degradation Simulation Data Set”
+## Turbofan Engine Degradation Simulation Data Set example in Apache Spark
 
 Uses the dataset from [1] to create a demostration of a machine learning setup for a predictive maintainance scenario.
 
