@@ -130,14 +130,14 @@ class PrepareAllModels(luigi.WrapperTask):
 
 class PrepareAllData(luigi.WrapperTask):
     def requires(self):
-        yield TEDSDSPrepareData('/share/tedsds/input/test_FD001.txt','/share/tedsds/scaleddftest_FD001/')
-        yield TEDSDSPrepareData('/share/tedsds/input/test_FD002.txt','/share/tedsds/scaleddftest_FD002/')
-        yield TEDSDSPrepareData('/share/tedsds/input/test_FD003.txt','/share/tedsds/scaleddftest_FD003/')
-        yield TEDSDSPrepareData('/share/tedsds/input/test_FD004.txt','/share/tedsds/scaleddftest_FD004/')
-        yield TEDSDSPrepareData('/share/tedsds/input/train_FD001.txt','/share/tedsds/scaleddftrain_FD001/')
-        yield TEDSDSPrepareData('/share/tedsds/input/train_FD002.txt','/share/tedsds/scaleddftrain_FD002/')
-        yield TEDSDSPrepareData('/share/tedsds/input/train_FD003.txt','/share/tedsds/scaleddftrain_FD003/')
-        yield TEDSDSPrepareData('/share/tedsds/input/train_FD004.txt','/share/tedsds/scaleddftrain_FD004/')
+        return [TEDSDSPrepareData('/share/tedsds/input/test_FD001.txt','/share/tedsds/scaleddftest_FD001/'),
+            TEDSDSPrepareData('/share/tedsds/input/test_FD002.txt','/share/tedsds/scaleddftest_FD002/'),
+            TEDSDSPrepareData('/share/tedsds/input/test_FD003.txt','/share/tedsds/scaleddftest_FD003/'),
+            TEDSDSPrepareData('/share/tedsds/input/test_FD004.txt','/share/tedsds/scaleddftest_FD004/'),
+            TEDSDSPrepareData('/share/tedsds/input/train_FD001.txt','/share/tedsds/scaleddftrain_FD001/'),
+            TEDSDSPrepareData('/share/tedsds/input/train_FD002.txt','/share/tedsds/scaleddftrain_FD002/'),
+            TEDSDSPrepareData('/share/tedsds/input/train_FD003.txt','/share/tedsds/scaleddftrain_FD003/'),
+            TEDSDSPrepareData('/share/tedsds/input/train_FD004.txt','/share/tedsds/scaleddftrain_FD004/')]
 
 
 
