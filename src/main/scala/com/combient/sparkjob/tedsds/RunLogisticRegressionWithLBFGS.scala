@@ -68,7 +68,7 @@ object RunLogisticRegressionWithLBFGS {
 
   def run(params: Params) {
 
-    val conf = new SparkConf().setAppName(s"MulticlassMetricsExample with $params")
+    val conf = new SparkConf().setAppName(s"RunLogisticRegressionWithLBFGS with $params")
     val sc = new SparkContext(conf)
 
     val input = params.input
@@ -104,7 +104,7 @@ object RunLogisticRegressionWithLBFGS {
       .run(data)
 
     if(params.model != ""){
-      model.save(sc, "%sMulticlassMetricsExamplesaved".format(params.model))
+      model.save(sc, "%s".format(params.model))
       print("Saved model as %s".format(params.model))
     }
 
