@@ -30,11 +30,11 @@ import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
 
-case class Record(category: String, features: Vector)
+case class Record(label: String, features: Vector)
 
 object RunRandomForest {
 
-  case class Params(label: String = null,model: String = null)
+  case class Params(input: String = null,model: String = null)
 
   def main(args: Array[String]): Unit = {
 
