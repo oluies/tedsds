@@ -19,8 +19,9 @@
 package com.combient.sparkjob.tedsds
 
 import org.apache.spark.ml.feature.StringIndexer
-import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
-import org.apache.spark.mllib.evaluation.MulticlassMetrics
+import org.apache.spark.ml.classification.RandomForestClassifier
+import org.apache.spark.ml.Pipeline
+import org.apache.spark.ml.feature.StringIndexer
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
@@ -28,7 +29,10 @@ import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
-object RunLogisticRegressionWithLBFGS {
+
+case class Record(category: String, features: Vector)
+
+object RunRandomForest {
 
   case class Params(input: String = null,model: String = null)
 
@@ -37,7 +41,7 @@ object RunLogisticRegressionWithLBFGS {
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
-      head("RunLogisticRegressionWithLBFGS: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
+      head("RunRandomForest: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
       arg[String]("<input>")
         .required()
         .text("hdfs input paths to a parquet dataset ")
@@ -50,7 +54,7 @@ object RunLogisticRegressionWithLBFGS {
         """
           |For example, the following command runs this app on a  dataset:
           |
-          | bin/spark-submit --class com.combient.sparkjob.tedsds.RunLogisticRegressionWithLBFGS \
+          | bin/spark-submit --class com.combient.sparkjob.tedsds.RunRandomForest \
           |  jarfile.jar \
           |  /share/tedsds/scaledd \
           |  /share/tedsds/savedmodel
@@ -67,6 +71,8 @@ object RunLogisticRegressionWithLBFGS {
   }
 
   def run(params: Params) {
+
+
 
     val conf = new SparkConf().setAppName(s"RunLogisticRegressionWithLBFGS with $params")
     val sc = new SparkContext(conf)
@@ -95,16 +101,23 @@ object RunLogisticRegressionWithLBFGS {
       .select($"indexedLabel", $"scaledFeatures")
       .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
 
+    val trainRDD: RDD[Record] = data.map(lp => Record(lp.label.toString, lp.features))
+    trainRDD.cache()
 
-    data.cache()
 
-    // Run training algorithm to build the model
-    val model = new LogisticRegressionWithLBFGS()
-      .setNumClasses(3)
-      .run(data)
+    val rf  = new RandomForestClassifier()
+      .setNumTrees(3)
+      .setFeatureSubsetStrategy("auto")
+      .setImpurity("gini")
+      .setMaxDepth(4)
+      .setMaxBins(32)
+
+    val pipeline = new Pipeline().setStages(Array(labelIndexer, rf))
+
+    val model = pipeline.fit(trainRDD.toDF())
 
     if(params.model != ""){
-      model.save(sc, "%s".format(params.model))
+      model.save("%s".format(params.model))
       print("Saved model as %s".format(params.model))
     }
 
