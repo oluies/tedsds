@@ -34,7 +34,7 @@ case class Record(category: String, features: Vector)
 
 object RunRandomForest {
 
-  case class Params(input: String = null,model: String = null)
+  case class Params(label: String = null,model: String = null)
 
   def main(args: Array[String]): Unit = {
 
@@ -92,18 +92,17 @@ object RunRandomForest {
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
       .setInputCol("label2")
-      .setOutputCol("indexedLabel")
+      .setOutputCol("label")
       .fit(scaledDF)
 
     val indexed = labelIndexer.transform(scaledDF)
 
     val data : RDD[LabeledPoint] = indexed
-      .select($"indexedLabel", $"scaledFeatures")
-      .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
+      .select($"label", $"scaledFeatures")
+      .map{case Row(label: Double, scaledFeatures: Vector) => LabeledPoint(label, scaledFeatures)}
 
     val trainRDD: RDD[Record] = data.map(lp => Record(lp.label.toString, lp.features))
     trainRDD.cache()
-
 
     val rf  = new RandomForestClassifier()
       .setNumTrees(3)
@@ -112,7 +111,7 @@ object RunRandomForest {
       .setMaxDepth(4)
       .setMaxBins(32)
 
-    val pipeline = new Pipeline().setStages(Array(labelIndexer, rf))
+    val pipeline = new Pipeline().setStages(Array(rf))
 
     val model = pipeline.fit(trainRDD.toDF())
 
