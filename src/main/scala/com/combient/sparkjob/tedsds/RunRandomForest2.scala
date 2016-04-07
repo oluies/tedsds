@@ -31,7 +31,6 @@ import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
 
-case class Record(category: String, features: Vector)
 
 object RunRandomForest2 {
 
