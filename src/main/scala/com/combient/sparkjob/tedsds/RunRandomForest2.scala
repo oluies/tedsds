@@ -22,9 +22,11 @@ import org.apache.spark.ml.feature.StringIndexer
 import org.apache.spark.ml.classification.RandomForestClassifier
 import org.apache.spark.ml.{PipelineModel, Pipeline}
 import org.apache.spark.ml.feature.StringIndexer
+import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.tree.RandomForest
+import org.apache.spark.mllib.tree.model.RandomForestModel
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
@@ -107,21 +109,32 @@ object RunRandomForest2 {
     // Empty categoricalFeaturesInfo indicates all features are continuous.
     val numClasses = 4 // 0-2
     val categoricalFeaturesInfo = Map[Int, Int]()
-    val numTrees = 9 // Use more in practice.
+    val numTrees = 9
     val featureSubsetStrategy = "auto" // Let the algorithm choose.
     val impurity = "gini"
-    val maxDepth = 4
+    val maxDepth = 6
     val maxBins = 32
 
-    val model = RandomForest.trainClassifier(trainRDD, numClasses, categoricalFeaturesInfo,
-      numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
+    val model: RandomForestModel = RandomForest.trainClassifier(trainRDD, numClasses,
+      categoricalFeaturesInfo, numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
+
+    // Compute raw scores on the test set
+    val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
+      val prediction = model.predict(features)
+      (prediction, label)
+    }
+
+    // Instantiate metrics object
+    val metrics = new MulticlassMetrics(predictionAndLabels)
+
+    // Confusion matrix
+    println("Confusion matrix:")
+    println(metrics.confusionMatrix)
 
 
     if(params.model != ""){
       model.save(sc,"%s".format(params.model))
       print("Saved model as %s".format(params.model))
-
-      //Exception in thread "main" java.lang.UnsupportedOperationException: Pipeline write will fail on this Pipeline because it contains a stage which does not implement Writable. Non-Writable stage: rfc_10877961fe5f of type class org.apache.spark.ml.classification.RandomForestClassificationModel
     }
 
     sc.stop()
