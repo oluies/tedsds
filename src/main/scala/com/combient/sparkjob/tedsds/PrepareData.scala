@@ -61,8 +61,6 @@ object PrepareData {
     val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
 
-    //todo: generate the select columns
-
     val customSchema = StructType(Seq(
       StructField("id",      IntegerType,nullable = true),
       StructField("cykle",   IntegerType,nullable =true),
@@ -120,8 +118,6 @@ object PrepareData {
     //     http://spark.apache.org/docs/latest/sql-programming-guide.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val w = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
-
-    //todo: generate the select columns
 
     // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     val x = withrul.select('*,
@@ -191,8 +187,10 @@ object PrepareData {
 
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-    val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2", "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"))
+    val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2", "sd11","sd20","sd4",
+      "sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting2","setting3"))
 
+    print(s"assembler these columns to  features vector ${columns}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
     val assembler = new VectorAssembler()
