@@ -33,7 +33,7 @@ import scopt.OptionParser
 
 case class Record(category: String, features: Vector)
 
-object RunRandomForest {
+object RunRandomForest2 {
 
   case class Params(input: String = null,model: String = null)
 
