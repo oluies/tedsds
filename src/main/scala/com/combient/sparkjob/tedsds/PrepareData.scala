@@ -189,9 +189,9 @@ object PrepareData {
       sqrt( sum(pow($"s21" -  mean($"s21").over(w),2)).over(w) / 5).as("sd21")
     )
 
-    val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2"))
-
-    print(s"Filter away these columns for the features ${columns}")
+    // filter away columns from
+    // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
+    val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2", "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"))
 
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
