@@ -74,7 +74,7 @@ object RunRandomForest2 {
 
 
 
-    val conf = new SparkConf().setAppName(s"RunLogisticRegressionWithLBFGS with $params")
+    val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
     val input = params.input
@@ -92,7 +92,7 @@ object RunRandomForest2 {
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
       .setInputCol("label2")
-      .setOutputCol("label")
+      .setOutputCol("indexedLabel")
       .fit(scaledDF)
 
     val indexed = labelIndexer.transform(scaledDF)

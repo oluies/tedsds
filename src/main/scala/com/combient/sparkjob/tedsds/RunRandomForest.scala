@@ -74,7 +74,7 @@ object RunRandomForest {
 
 
 
-    val conf = new SparkConf().setAppName(s"RunLogisticRegressionWithLBFGS with $params")
+    val conf = new SparkConf().setAppName(s"RunRandomForest with $params")
     val sc = new SparkContext(conf)
 
     val input = params.input
