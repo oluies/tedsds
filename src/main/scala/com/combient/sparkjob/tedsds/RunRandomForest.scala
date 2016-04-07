@@ -30,7 +30,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
 
-case class Record(label: String, features: Vector)
+case class Record(category: String, features: Vector)
 
 object RunRandomForest {
 
@@ -97,12 +97,16 @@ object RunRandomForest {
 
     val indexed = labelIndexer.transform(scaledDF)
 
-    val data : RDD[LabeledPoint] = indexed
+    val trainRDD : RDD[Record] = indexed
       .select($"label", $"scaledFeatures")
-      .map{case Row(label: Double, scaledFeatures: Vector) => LabeledPoint(label, scaledFeatures)}
+      .map{case Row(label: Double, scaledFeatures: Vector) => Record(label.toString, scaledFeatures)}
 
-    val trainRDD: RDD[Record] = data.map(lp => Record(lp.label.toString, lp.features))
     trainRDD.cache()
+
+    //  trick with StringIndexer. After applying we get required attributes ({"vals":["1.0","0.0"],"type":"nominal","name":"label"}) but some classes in ml seem to work just fine without it.
+    val indexer = new StringIndexer()
+      .setInputCol("category")
+      .setOutputCol("label")
 
     val rf  = new RandomForestClassifier()
       .setNumTrees(3)
@@ -111,7 +115,7 @@ object RunRandomForest {
       .setMaxDepth(4)
       .setMaxBins(32)
 
-    val pipeline = new Pipeline().setStages(Array(rf))
+    val pipeline = new Pipeline().setStages(Array(indexer,rf))
 
     val model = pipeline.fit(trainRDD.toDF())
 
