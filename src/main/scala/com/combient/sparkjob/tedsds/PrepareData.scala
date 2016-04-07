@@ -93,7 +93,6 @@ object PrepareData {
       .format("com.databricks.spark.csv")
       .option("header", "false")
       .option("delimiter"," ")
-      .option("nullValue","0")
       .option("treatEmptyValuesAsNulls","true")
       .schema(customSchema)
       .load(params.input)
