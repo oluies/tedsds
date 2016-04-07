@@ -62,32 +62,32 @@ object PrepareData {
     import sqlContext.implicits._
 
     val customSchema = StructType(Seq(
-      StructField("id",      IntegerType,nullable = true),
-      StructField("cykle",   IntegerType,nullable =true),
-      StructField("setting1",DoubleType,nullable =true),
-      StructField("setting2",DoubleType,nullable =true),
-      StructField("setting3",DoubleType,nullable =true),
-      StructField("s1",      DoubleType,nullable =true),
-      StructField("s2",      DoubleType,nullable =true),
-      StructField("s3",      DoubleType,nullable =true),
-      StructField("s4",      DoubleType,nullable =true),
-      StructField("s5",      DoubleType,nullable =true),
-      StructField("s6",      DoubleType,nullable =true),
-      StructField("s7",      DoubleType,nullable =true),
-      StructField("s8",      DoubleType,nullable =true),
-      StructField("s9",      DoubleType,nullable =true),
-      StructField("s10",     DoubleType,nullable =true),
-      StructField("s11",     DoubleType,nullable =true),
-      StructField("s12",     DoubleType,nullable =true),
-      StructField("s13",     DoubleType,nullable =true),
-      StructField("s14",     DoubleType,nullable =true),
-      StructField("s15",     DoubleType,nullable =true),
-      StructField("s16",     DoubleType,nullable =true),
-      StructField("s17",     DoubleType,nullable =true),
-      StructField("s18",     DoubleType,nullable =true),
-      StructField("s19",     DoubleType,nullable =true),
-      StructField("s20",     DoubleType,nullable =true),
-      StructField("s21",     DoubleType,nullable =true)))
+      StructField("id",      IntegerType,nullable = false),
+      StructField("cykle",   IntegerType,nullable =false),
+      StructField("setting1",DoubleType,nullable =false),
+      StructField("setting2",DoubleType,nullable =false),
+      StructField("setting3",DoubleType,nullable =false),
+      StructField("s1",      DoubleType,nullable =false),
+      StructField("s2",      DoubleType,nullable =false),
+      StructField("s3",      DoubleType,nullable =false),
+      StructField("s4",      DoubleType,nullable =false),
+      StructField("s5",      DoubleType,nullable =false),
+      StructField("s6",      DoubleType,nullable =false),
+      StructField("s7",      DoubleType,nullable =false),
+      StructField("s8",      DoubleType,nullable =false),
+      StructField("s9",      DoubleType,nullable =false),
+      StructField("s10",     DoubleType,nullable =false),
+      StructField("s11",     DoubleType,nullable =false),
+      StructField("s12",     DoubleType,nullable =false),
+      StructField("s13",     DoubleType,nullable =false),
+      StructField("s14",     DoubleType,nullable =false),
+      StructField("s15",     DoubleType,nullable =false),
+      StructField("s16",     DoubleType,nullable =false),
+      StructField("s17",     DoubleType,nullable =false),
+      StructField("s18",     DoubleType,nullable =false),
+      StructField("s19",     DoubleType,nullable =false),
+      StructField("s20",     DoubleType,nullable =false),
+      StructField("s21",     DoubleType,nullable =false)))
 
     val df: DataFrame = sqlContext.read
       .format("com.databricks.spark.csv")
@@ -188,9 +188,9 @@ object PrepareData {
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
     val columns = x.columns.diff(Seq("id","maxcykle","rul","label1", "label2", "sd11","sd20","sd4",
-      "sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting2","setting3"))
+      "sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting2","setting3",'s18','s19'))
 
-    print(s"assembler these columns to  features vector ${columns.toList}")
+    println(s"assembler these columns to  features vector ${columns.toList}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
     val assembler = new VectorAssembler()
