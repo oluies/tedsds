@@ -102,6 +102,8 @@ object PrepareData {
 
     df.persist()
 
+    df.show(10)
+
     // calculate max cykle per id
     val maxCyclePerId = df.groupBy($"id").agg(max($"cykle").alias("maxcykle"))
 
