@@ -57,6 +57,7 @@ object PrepareData {
   def run(params: Params) {
     val conf = new SparkConf().setAppName("PrepareData")
 
+
     val sc = new SparkContext(conf)
     val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
@@ -205,7 +206,10 @@ object PrepareData {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
 
+
     val withFeatures = assembler.transform(x)
+
+    withFeatures.show(10)
 
     val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
 
