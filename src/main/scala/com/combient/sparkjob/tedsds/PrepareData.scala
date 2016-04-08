@@ -94,6 +94,7 @@ object PrepareData {
       .option("header", "false")
       .option("delimiter"," ")
       .option("treatEmptyValuesAsNulls","true")
+      .option("mode","DROPMALFORMED")
       .schema(customSchema)
       .load(params.input)
 
