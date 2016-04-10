@@ -150,12 +150,10 @@ object PrepareData2 {
     val withMeans = withrul.select('*,
       mean($"s1").over(w).as("a1"),
       sqrt(sum(pow($"s1" - mean($"s1").over(w), 2)).over(w) / 5).as("sd1"),
-      ($"s1" - ($"a1" / nanvl($"sd1",lit(1))) ).as("stdized_s1"),
 
       mean($"s2").over(w).as("a2"),
       sqrt(sum(pow($"s2" - mean($"s2").over(w), 2)).over(w) / 5).as("sd2"),
-
-
+      
       mean($"s3").over(w).as("a3"),
       sqrt(sum(pow($"s3" - mean($"s3").over(w), 2)).over(w) / 5).as("sd3"),
 
