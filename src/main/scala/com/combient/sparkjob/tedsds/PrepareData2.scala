@@ -107,20 +107,16 @@ object PrepareData2 {
 
     val withrul: DataFrame = addLabels(sqlContext,withOPMode) // add label 2 (1 if under w1, 2 if under w0, zero otherwize)
 
-
     val windowRange = 5
     // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
     //     http://spark.apache.org/docs/latest/sql-programming-guide.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val win = Window.partitionBy("opmode").orderBy("id","cykle").rowsBetween(0, windowRange)
-
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, win)
 
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-    val columns = withMeans.columns.diff(Seq("id","maxcykle","rul","label1", "label2") )
-
-
+    val columns = withMeans.columns.diff(Seq("id","maxcykle","rul","label1", "label2","setting1","setting2") )
     println(s"assembler these columns to  features vector ${columns.toList}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
@@ -132,7 +128,6 @@ object PrepareData2 {
     val scaler = new MinMaxScaler()
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
-
 
     val withFeatures = assembler.transform(withMeans)
 
@@ -269,6 +264,7 @@ object PrepareData2 {
     val model = kmeans.fit(clusterwfeatDF)
 
     val operationModePredictions = model.transform(clusterwfeatDF)
+
     (model, operationModePredictions)
   }
 }
