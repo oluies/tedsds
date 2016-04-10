@@ -260,14 +260,15 @@ object PrepareData2 {
       .setInputCols(Array("setting1", "setting2", "setting3"))
       .setOutputCol("features")
 
+    val clusterwfeatDF  = assembler.transform(clusterDF)
     // Trains a k-means model
     val kmeans = new KMeans()
       .setK(6) //  6 operationmodes known apriori from dataset description
       .setFeaturesCol("features")
       .setPredictionCol("operationmode")
-    val model = kmeans.fit(clusterDF)
+    val model = kmeans.fit(clusterwfeatDF)
 
-    val operationModePredictions = model.transform(clusterDF)
+    val operationModePredictions = model.transform(clusterwfeatDF)
     (model, operationModePredictions)
   }
 }
