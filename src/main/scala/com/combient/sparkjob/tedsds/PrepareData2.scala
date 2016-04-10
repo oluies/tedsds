@@ -113,7 +113,7 @@ object PrepareData2 {
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val win = Window.partitionBy("opmode").orderBy("id","cykle").rowsBetween(0, windowRange)
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, win)
-    val cleanedDF = withMeans.dropDuplicates(Seq("setting1","setting2","setting3") )
+    val cleanedDF = withMeans.dropDuplicates()
     
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
