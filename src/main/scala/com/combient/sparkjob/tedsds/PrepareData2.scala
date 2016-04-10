@@ -103,7 +103,7 @@ object PrepareData2 {
 
     val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
 
-    val withOPMode: DataFrame = addOPmode(df, operationModePredictions)
+    val withOPMode: DataFrame = addOPmode(sqlContext,df, operationModePredictions)
 
     val withrul: DataFrame = addLabels(sqlContext,withOPMode) // add label 2 (1 if under w1, 2 if under w0, zero otherwize)
 
@@ -214,10 +214,11 @@ object PrepareData2 {
     withMeans
   }
 
-  def addOPmode(df: DataFrame, operationModePredictions: DataFrame): DataFrame = {
-    val withOPMode = df.join(operationModePredictions, "id")
-      .withColumn("opmode", operationModePredictions("operationmode")) // Add RUL as maxcycle-currentcycle per row
-    withOPMode
+  def addOPmode(sqLContext: SQLContext,df: DataFrame, operationModePredictions: DataFrame): DataFrame = {
+    import sqLContext.implicits._
+    val withOPMode = df.as('a).join(operationModePredictions.as('b), $"a.id" === $"b.id")
+
+    withOPMode.select($"a.*", $"b.operationmode")
   }
 
   /*
