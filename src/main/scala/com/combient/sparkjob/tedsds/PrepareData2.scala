@@ -111,7 +111,7 @@ object PrepareData2 {
     // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
     //     http://spark.apache.org/docs/latest/sql-programming-guide.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
-    val win = Window.partitionBy("opmode").orderBy("id","cykle").rowsBetween(0, windowRange)
+    val win = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, win)
 
 
@@ -218,7 +218,7 @@ object PrepareData2 {
     import sqLContext.implicits._
     val withOPMode = df.as('a).join(operationModePredictions.as('b), $"a.id" === $"b.id")
 
-    withOPMode.select($"a.*", $"b.operationmode")
+    withOPMode.select($"a.*", $"b.operationmode" )
   }
 
   /*
