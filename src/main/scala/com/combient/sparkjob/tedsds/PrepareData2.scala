@@ -250,7 +250,7 @@ object PrepareData2 {
   def kMeansForOperationalModes(sqLContext: SQLContext,df: DataFrame): (KMeansModel, DataFrame) = {
     // https://spark.apache.org/docs/latest/ml-clustering.html
     import sqLContext.implicits._
-    val clusterDF = df.select($"id",$"cycle",$"setting1", $"setting2", $"setting3")
+    val clusterDF = df.select($"id",$"cykle",$"setting1", $"setting2", $"setting3")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
     val assembler = new VectorAssembler()
