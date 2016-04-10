@@ -113,10 +113,11 @@ object PrepareData2 {
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val win = Window.partitionBy("opmode").orderBy("id","cykle").rowsBetween(0, windowRange)
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, win)
-
+    val cleanedDF = withMeans.dropDuplicates(Seq("setting1","setting2","setting3") )
+    
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-    val columns = withMeans.columns.diff(Seq("id","maxcykle","rul","label1", "label2","setting1","setting2") )
+    val columns = cleanedDF.columns.diff(Seq("id","maxcykle","rul","label1", "label2") )
     println(s"assembler these columns to  features vector ${columns.toList}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
@@ -129,7 +130,7 @@ object PrepareData2 {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
 
-    val withFeatures = assembler.transform(withMeans)
+    val withFeatures = assembler.transform(cleanedDF)
 
     withFeatures.show(10)
 
