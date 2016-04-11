@@ -176,15 +176,21 @@ object PrepareData2 {
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val w = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
 
-    def meanAndStdDev(id:Int): Column = {
+    def meanCol(id:Int): Column = {
       val col: Column = column("s"+id)
-      mean(col).over(w).as("a"+id) +  sqrt(sum(pow(col- mean(col).over(w), 2)).over(w) / windowRange).as("sd"+id)
+      mean(col).over(w).as("a"+id)
+    }
+
+    def stddevCol(id:Int): Column = {
+      val col: Column = column("s"+id)
+      sqrt(sum(pow(col- mean(col).over(w), 2)).over(w) / windowRange).as("sd"+id)
     }
 
     // add the 21 columns
-    val columns: IndexedSeq[Column] = 1 to 21 map(id => meanAndStdDev(id))
-    val allColumns = withrul.columns union columns
-    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union columns.toSeq
+    val meancols: IndexedSeq[Column] = 1 to 21 map(id => meanCol(id))
+    val stddevcols: IndexedSeq[Column] = 1 to 21 map(id => stddevCol(id))
+
+    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union meancols.toSeq union stddevcols.toSeq
     val withMeans = withrul.select(selectAll :_*)
 
     withMeans
