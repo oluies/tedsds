@@ -167,7 +167,6 @@ object PrepareData2 {
     val withMeans = withrul.select('*,
       mean($"s1").over(w).as("a1"),
       sqrt(sum(pow($"s1" - mean($"s1").over(w), 2)).over(w) / 5).as("sd1"),
-      ($"s1" - coalesce($"a2" / $"sd", $"a2" / lit(AZ))).as("std1"),
 
       mean($"s2").over(w).as("a2"),
       sqrt(sum(pow($"s2" - mean($"s2").over(w), 2)).over(w) / 5).as("sd2"),
