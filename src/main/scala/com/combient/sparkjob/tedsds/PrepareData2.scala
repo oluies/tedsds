@@ -115,9 +115,9 @@ object PrepareData2 {
     val winMean = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, winMean)
     val winStdized = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
-   // val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans,winStdized)
+    val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans,winStdized)
 
-    //($"s1" - ($"a1" / nanvl($"sd1",lit(1))) ).as("stdized_s1"),
+    stdized.show(10)
 
 
     // filter away columns from
@@ -139,7 +139,7 @@ object PrepareData2 {
 
     withFeatures.show(10)
 
-    val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
+    val scaledDF =  scaler.fit(withFeatures).transform(stdized)
 
     //drop featurescolumn
     scaledDF.drop("features")
