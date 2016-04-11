@@ -104,8 +104,6 @@ object PrepareData2 {
 
     val withFeatures = assembler.transform(stdized)
 
-    withFeatures.show(10)
-
     val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
 
     //drop featurescolumn,maxcykle
