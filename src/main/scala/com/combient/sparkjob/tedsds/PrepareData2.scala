@@ -157,12 +157,13 @@ object PrepareData2 {
     val AZ: Column  = lit(0.00000001)
 
     def opMode(id:Int): Column = {
-      ($"s"+id - coalesce(column("a"+id) / column("sd"+id), column("a"+id) / lit(AZ))).as("std"+id)
+      (column("s"+id) - coalesce(column("a"+id) / column("sd"+id), column("a"+id) / lit(AZ))).as("std"+id)
     }
 
-    val columns: IndexedSeq[Column] =  1 to 21 map(id => opMode(id))
-    val allColumns: Column = col("*") +  columns
-    val withStd = withrul.select(allColumns)
+    // add the 21 std<i> columns based on s<i> - (a<id>/sd<id>)
+    val columns: IndexedSeq[Column] = 1 to 21 map(id => opMode(id))
+
+    val withStd = withrul.select(columns:_*)
 
     withStd
   }
