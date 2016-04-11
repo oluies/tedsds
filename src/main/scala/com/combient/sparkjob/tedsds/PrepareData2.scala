@@ -135,11 +135,11 @@ object PrepareData2 {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
 
-    val withFeatures = assembler.transform(withMeans)
+    val withFeatures = assembler.transform(stdized)
 
     withFeatures.show(10)
 
-    val scaledDF =  scaler.fit(stdized).transform(stdized)
+    val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
 
     //drop featurescolumn
     scaledDF.drop("features")
