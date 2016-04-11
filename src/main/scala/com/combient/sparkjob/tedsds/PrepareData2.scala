@@ -155,7 +155,9 @@ object PrepareData2 {
     val AZ: Column  = lit(0.00000001)
 
     val withStd = withrul.select('*,
-      ($"s1" - coalesce($"a2" / $"sd", $"a2" / lit(AZ))).as("std1")
+      ($"s1" - coalesce($"a1" / $"sd1", $"a1" / lit(AZ))).as("std1"),
+      ($"s2" - coalesce($"a2" / $"sd2", $"a2" / lit(AZ))).as("std2"),
+      ($"s3" - coalesce($"a3" / $"sd3", $"a3" / lit(AZ))).as("std3")
     )
     withStd
   }
