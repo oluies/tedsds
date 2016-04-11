@@ -15,6 +15,8 @@ import scopt.OptionParser
 import org.apache.spark.ml.clustering.{KMeansModel, KMeans}
 import org.apache.spark.mllib.linalg.Vectors
 
+import scala.collection.immutable.IndexedSeq
+
 
 object PrepareData2 {
 
@@ -154,11 +156,14 @@ object PrepareData2 {
     import sqLContext.implicits._
     val AZ: Column  = lit(0.00000001)
 
-    val withStd = withrul.select('*,
-      ($"s1" - coalesce($"a1" / $"sd1", $"a1" / lit(AZ))).as("std1"),
-      ($"s2" - coalesce($"a2" / $"sd2", $"a2" / lit(AZ))).as("std2"),
-      ($"s3" - coalesce($"a3" / $"sd3", $"a3" / lit(AZ))).as("std3")
-    )
+    def opMode(id:Int): Column = {
+      ($"s"+id - coalesce(column("a"+id) / column("sd"+id), column("a"+id) / lit(AZ))).as("std"+id)
+    }
+
+    val columns: IndexedSeq[Column] =  1 to 21 map(id => opMode(id))
+    val allColumns: Column = col("*") +  columns
+    val withStd = withrul.select(allColumns)
+
     withStd
   }
 
