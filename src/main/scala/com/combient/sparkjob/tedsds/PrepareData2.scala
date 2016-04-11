@@ -9,7 +9,7 @@ import org.apache.spark.sql.expressions.{WindowSpec, Window}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StructField, StructType}
-import org.apache.spark.sql.{SQLContext, DataFrame, SaveMode}
+import org.apache.spark.sql.{Column, SQLContext, DataFrame, SaveMode}
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 import org.apache.spark.ml.clustering.{KMeansModel, KMeans}
@@ -111,8 +111,12 @@ object PrepareData2 {
     // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
     //     http://spark.apache.org/docs/latest/sql-programming-guide.html
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
-    val win = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
-    val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, win)
+    val winMean = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
+    val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, winMean)
+    //val winStdized = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
+    //val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans,winStdized)
+
+    //($"s1" - ($"a1" / nanvl($"sd1",lit(1))) ).as("stdized_s1"),
 
 
     // filter away columns from
@@ -144,16 +148,30 @@ object PrepareData2 {
     sc.stop()
   }
 
+  def stdizedOperationmode(sqLContext: SQLContext,withrul: DataFrame, w: WindowSpec): DataFrame = {
+    // see http://spark.apache.org/docs/latest/sql-programming-guide.html
+    import sqLContext.implicits._
+    val AZ: Column  = lit(0.00000001)
+
+    val withStd = withrul.select('*,
+      ($"s1" - coalesce($"a2" / $"sd", $"a2" / lit(AZ))).as("std1")
+    )
+    withStd
+  }
+
   def calculateMeanSdev(sqLContext: SQLContext,withrul: DataFrame, w: WindowSpec): DataFrame = {
     // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     import sqLContext.implicits._
+    val AZ: Column  = lit(0.00000001)
     val withMeans = withrul.select('*,
       mean($"s1").over(w).as("a1"),
       sqrt(sum(pow($"s1" - mean($"s1").over(w), 2)).over(w) / 5).as("sd1"),
+      ($"s1" - coalesce($"a2" / $"sd", $"a2" / lit(AZ))).as("std1"),
+
 
       mean($"s2").over(w).as("a2"),
       sqrt(sum(pow($"s2" - mean($"s2").over(w), 2)).over(w) / 5).as("sd2"),
-      
+
       mean($"s3").over(w).as("a3"),
       sqrt(sum(pow($"s3" - mean($"s3").over(w), 2)).over(w) / 5).as("sd3"),
 
