@@ -9,7 +9,7 @@ import org.apache.spark.sql.expressions.{WindowSpec, Window}
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.sql.types.{DoubleType, IntegerType, StructField, StructType}
-import org.apache.spark.sql.{Column, SQLContext, DataFrame, SaveMode}
+import org.apache.spark.sql._
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 import org.apache.spark.ml.clustering.{KMeansModel, KMeans}
@@ -162,8 +162,9 @@ object PrepareData2 {
 
     // add the 21 std<i> columns based on s<i> - (a<id>/sd<id>)
     val columns: IndexedSeq[Column] = 1 to 21 map(id => opMode(id))
-
-    val withStd = withrul.select(columns:_*)
+    val allColumns = withrul.columns union columns
+    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union columns.toSeq
+    val withStd = withrul.select(selectAll :_*)
 
     withStd
   }
