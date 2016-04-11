@@ -100,6 +100,7 @@ object PrepareData2 {
 
     df.persist()
     df.show(10)
+    df.cache() // for Kmeans
 
     val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
 
@@ -113,8 +114,8 @@ object PrepareData2 {
     // PARTITION BY id  ORDER BY cykle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
     val winMean = Window.partitionBy("id").orderBy("cykle").rowsBetween(0, windowRange)
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul, winMean)
-    //val winStdized = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
-    //val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans,winStdized)
+    val winStdized = Window.partitionBy("operationmode").orderBy("id","cykle").rowsBetween(0, windowRange)
+    val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans,winStdized)
 
     //($"s1" - ($"a1" / nanvl($"sd1",lit(1))) ).as("stdized_s1"),
 
@@ -134,7 +135,7 @@ object PrepareData2 {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
 
-    val withFeatures = assembler.transform(withMeans)
+    val withFeatures = assembler.transform(stdized)
 
     withFeatures.show(10)
 
@@ -166,8 +167,6 @@ object PrepareData2 {
     val withMeans = withrul.select('*,
       mean($"s1").over(w).as("a1"),
       sqrt(sum(pow($"s1" - mean($"s1").over(w), 2)).over(w) / 5).as("sd1"),
-      ($"s1" - coalesce($"a2" / $"sd", $"a2" / lit(AZ))).as("std1"),
-
 
       mean($"s2").over(w).as("a2"),
       sqrt(sum(pow($"s2" - mean($"s2").over(w), 2)).over(w) / 5).as("sd2"),
