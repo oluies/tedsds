@@ -63,33 +63,7 @@ object PrepareData2 {
     val sqlContext = new HiveContext(sc)
     import sqlContext.implicits._
 
-    val customSchema = StructType(Seq(
-      StructField("id",      IntegerType,nullable = false),
-      StructField("cykle",   IntegerType,nullable =false),
-      StructField("setting1",DoubleType,nullable =true),
-      StructField("setting2",DoubleType,nullable =true),
-      StructField("setting3",DoubleType,nullable =true),
-      StructField("s1",      DoubleType,nullable =true),
-      StructField("s2",      DoubleType,nullable =true),
-      StructField("s3",      DoubleType,nullable =true),
-      StructField("s4",      DoubleType,nullable =true),
-      StructField("s5",      DoubleType,nullable =true),
-      StructField("s6",      DoubleType,nullable =true),
-      StructField("s7",      DoubleType,nullable =true),
-      StructField("s8",      DoubleType,nullable =true),
-      StructField("s9",      DoubleType,nullable =true),
-      StructField("s10",     DoubleType,nullable =true),
-      StructField("s11",     DoubleType,nullable =true),
-      StructField("s12",     DoubleType,nullable =true),
-      StructField("s13",     DoubleType,nullable =true),
-      StructField("s14",     DoubleType,nullable =true),
-      StructField("s15",     DoubleType,nullable =true),
-      StructField("s16",     DoubleType,nullable =true),
-      StructField("s17",     DoubleType,nullable =true),
-      StructField("s18",     DoubleType,nullable =true),
-      StructField("s19",     DoubleType,nullable =true),
-      StructField("s20",     DoubleType,nullable =true),
-      StructField("s21",     DoubleType,nullable =true)))
+    val customSchema = getSchema
 
     val df: DataFrame = sqlContext.read
       .format("com.databricks.spark.csv")
@@ -101,7 +75,6 @@ object PrepareData2 {
       .load(params.input)
 
     df.persist()
-    df.show(10)
     df.cache() // for Kmeans
 
     val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
@@ -114,12 +87,9 @@ object PrepareData2 {
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul)
     val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans)
 
-    stdized.show(10)
-
-
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-    val columns = withMeans.columns.diff(Seq("id","maxcykle","rul","label1", "label2") )
+    val columns = stdized.columns.diff(Seq("id","maxcykle","rul","label1", "label2") )
     println(s"assembler these columns to  features vector ${columns.toList}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
@@ -142,13 +112,42 @@ object PrepareData2 {
     scaledDF.drop("features")
     scaledDF.drop("maxcykle")
 
-
     scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
 
     sc.stop()
   }
 
-  def stdizedOperationmode(sqLContext: SQLContext,withrul: DataFrame): DataFrame = {
+  def getSchema: StructType = {
+    StructType(Seq(
+      StructField("id", IntegerType, nullable = false),
+      StructField("cykle", IntegerType, nullable = false),
+      StructField("setting1", DoubleType, nullable = true),
+      StructField("setting2", DoubleType, nullable = true),
+      StructField("setting3", DoubleType, nullable = true),
+      StructField("s1", DoubleType, nullable = true),
+      StructField("s2", DoubleType, nullable = true),
+      StructField("s3", DoubleType, nullable = true),
+      StructField("s4", DoubleType, nullable = true),
+      StructField("s5", DoubleType, nullable = true),
+      StructField("s6", DoubleType, nullable = true),
+      StructField("s7", DoubleType, nullable = true),
+      StructField("s8", DoubleType, nullable = true),
+      StructField("s9", DoubleType, nullable = true),
+      StructField("s10", DoubleType, nullable = true),
+      StructField("s11", DoubleType, nullable = true),
+      StructField("s12", DoubleType, nullable = true),
+      StructField("s13", DoubleType, nullable = true),
+      StructField("s14", DoubleType, nullable = true),
+      StructField("s15", DoubleType, nullable = true),
+      StructField("s16", DoubleType, nullable = true),
+      StructField("s17", DoubleType, nullable = true),
+      StructField("s18", DoubleType, nullable = true),
+      StructField("s19", DoubleType, nullable = true),
+      StructField("s20", DoubleType, nullable = true),
+      StructField("s21", DoubleType, nullable = true)))
+  }
+
+  def stdizedOperationmode(sqLContext: SQLContext, withrul: DataFrame): DataFrame = {
     // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     import sqLContext.implicits._
     val AZ: Column  = lit(0.00000001)
