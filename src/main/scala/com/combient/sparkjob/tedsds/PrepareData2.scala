@@ -139,7 +139,7 @@ object PrepareData2 {
 
     withFeatures.show(10)
 
-    val scaledDF =  scaler.fit(withFeatures).transform(stdized)
+    val scaledDF =  scaler.fit(stdized).transform(stdized)
 
     //drop featurescolumn
     scaledDF.drop("features")
