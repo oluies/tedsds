@@ -85,11 +85,12 @@ object PrepareData2 {
 
 
     val withMeans: DataFrame = calculateMeanSdev(sqlContext,withrul)
-    val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans)
+
+    //val stdized: DataFrame = stdizedOperationmode(sqlContext,withMeans)
 
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-    val columns = stdized.columns.diff(Seq("id","maxcykle","rul","label1", "label2") )
+    val columns = withMeans.columns.diff(Seq("id","maxcykle","rul","label1", "label2",) )
     println(s"assembler these columns to  features vector ${columns.toList}")
     //see https://spark.apache.org/docs/latest/ml-features.html
     // columns to feature vector
@@ -102,7 +103,7 @@ object PrepareData2 {
       .setInputCol("features")
       .setOutputCol("scaledFeatures")
 
-    val withFeatures = assembler.transform(stdized)
+    val withFeatures = assembler.transform(withMeans)
 
     val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
 
@@ -207,10 +208,6 @@ object PrepareData2 {
     // calculate max cykle per id
     import sqLContext.implicits._
     val maxCyclePerId = df.groupBy($"id").agg(max($"cykle").alias("maxcykle"))
-
-    //maxCyclePerId.show
-
-    // windows for classifcation
 
     val w1: Int = 30
     val w0: Int = 15
