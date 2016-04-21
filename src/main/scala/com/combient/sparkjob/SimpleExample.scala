@@ -20,9 +20,8 @@ package com.combient.sparkjob
 
 import org.apache.spark.sql.SQLContext
 
-
 // $example off$
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.{ SparkConf, SparkContext }
 
 object SimpleExample {
 
@@ -43,14 +42,13 @@ object SimpleExample {
       (2, 3, 1),
       (2, 4, 11),
       (2, 5, 1),
-      (2, 6, 11)
-    )
+      (2, 6, 11))
 
     val sqlContext = new SQLContext(sc)
     import sqlContext.implicits._
     val dft = sc.parallelize(data).toDF(schema: _*)
 
-    dft.write.parquet("/user/xadmin/pm.scaledfeatures")
+    dft.write.parquet("pm.scaledfeatures")
 
     println(s"Count: ${dft.count()}")
 
