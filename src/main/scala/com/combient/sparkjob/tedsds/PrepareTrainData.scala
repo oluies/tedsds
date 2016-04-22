@@ -17,7 +17,7 @@ import org.apache.spark.{SparkContext, SparkConf}
 
 
 
-object PrepareData {
+object PrepareTrainData {
 
   case class Params(input: String = null,output: String = null)
 
