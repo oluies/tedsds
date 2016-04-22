@@ -116,6 +116,9 @@ object PrepareData2 {
     sc.stop()
   }
 
+  /*
+    Return the schema
+   */
   def getSchema: StructType = {
     StructType(Seq(
       StructField("id", IntegerType, nullable = false),
@@ -145,7 +148,9 @@ object PrepareData2 {
       StructField("s20", DoubleType, nullable = true),
       StructField("s21", DoubleType, nullable = true)))
   }
-
+  /*
+    Standardize a value as std<x> as s - a/sd (signal - average signal / standard deviation)
+   */
   def stdizedOperationmode(sqLContext: SQLContext, withrul: DataFrame): DataFrame = {
     // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     import sqLContext.implicits._
@@ -164,6 +169,22 @@ object PrepareData2 {
     withStd
   }
 
+  /*
+    Calculate the standard deviation and mean for each column
+
+    Same as :
+    val x = withrul.select('*,
+      mean($"s1").over(w).as("a1"),
+      sqrt( sum(pow($"s1" -  mean($"s1").over(w),2)).over(w) / 5).as("sd1"),
+
+      mean($"s2").over(w).as("a2"),
+      sqrt( sum(pow($"s2" -  mean($"s2").over(w),2)).over(w) / 5).as("sd2"),
+
+      mean($"s3").over(w).as("a3"),
+      sqrt( sum(pow($"s3" -  mean($"s3").over(w),2)).over(w) / 5).as("sd3"),
+
+
+   */
   def calculateMeanSdev(sqLContext: SQLContext,withrul: DataFrame): DataFrame = {
     // see http://spark.apache.org/docs/latest/sql-programming-guide.html
     import sqLContext.implicits._
