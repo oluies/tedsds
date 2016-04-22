@@ -1,29 +1,52 @@
-#!/bin/sh
+#!/bin/bash
 
-#This script uploads the data from the ../data folder to HDFS
 
-#gunzip --keep ../data/*.gz
-for i in `ls ../data/*.gz` 
+#This script uploads the data from the data/ folder to HDFS
+
+
+#Simple attempt to figure out the relative path to the data
+if [[ $0 == "./script/hadoopfs.sh" ]] 
+then
+	DATADIR=./data
+else 
+if [[ $0 == "./hadoopfs.sh" ]]
+then
+	DATADIR=../data
+else
+	echo "Please run this script from within the script/ directory"
+	exit
+fi
+fi
+
+
+#Decompress the data
+for i in `ls $DATADIR/*.gz` 
 do 
 	j=`echo $i | sed "s/\.gz//" ` 
 	gunzip -c $i > $j 
 done
 
 
-#hadoop fs -rm -r -f /share/tedsds
+#Clean up HDFS to avoid "Error - file exist"
+hadoop fs -rm -r -f /share/tedsds
+
+#Put the data
 hadoop fs -mkdir -p /share/tedsds/input/
-hadoop fs -put ../data/test_FD001.txt /share/tedsds/input/
-hadoop fs -put ../data/test_FD002.txt /share/tedsds/input/
-hadoop fs -put ../data/test_FD003.txt /share/tedsds/input/
-hadoop fs -put ../data/test_FD004.txt /share/tedsds/input/
-hadoop fs -put ../data/train_FD001.txt /share/tedsds/input/
-hadoop fs -put ../data/train_FD002.txt /share/tedsds/input/
-hadoop fs -put ../data/train_FD003.txt /share/tedsds/input/
-hadoop fs -put ../data/train_FD004.txt /share/tedsds/input/
-hadoop fs -put  ../data/RUL_FD001.txt  /share/tedsds/input/
-hadoop fs -put  ../data/RUL_FD002.txt  /share/tedsds/input/
-hadoop fs -put  ../data/RUL_FD003.txt  /share/tedsds/input/
-hadoop fs -put  ../data/RUL_FD004.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/test_FD001.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/test_FD002.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/test_FD003.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/test_FD004.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/train_FD001.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/train_FD002.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/train_FD003.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/train_FD004.txt /share/tedsds/input/
+hadoop fs -put $DATADIR/RUL_FD001.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/RUL_FD002.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/RUL_FD003.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/RUL_FD004.txt  /share/tedsds/input/
+
+#Print the content of the folder in HDFS
 hadoop fs -ls /share/tedsds/input/
 
-rm -rf ../data/*.txt
+#Remove uncompressed data
+rm -rf $DATADIR/*.txt
