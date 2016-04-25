@@ -219,8 +219,6 @@ object PrepareTrainData {
     )
 
 
-
-
     // filter away columns from
     // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
     //val columns = x.columns.diff(Seq("id","maxcycle","rul","label1", "label2", "sd11","sd20","sd4",
@@ -254,6 +252,7 @@ object PrepareTrainData {
 
     //Optionally save as CSV for debugging purposes
     scaledDF.write.mode(SaveMode.Overwrite).format("com.databricks.spark.csv").option("header", "true").save(params.output.concat(".csv"))
+    x.write.mode(SaveMode.Overwrite).format("com.databricks.spark.csv").option("header", "true").save(params.output.concat("_unscaled.csv"))
 
     sc.stop()
   }

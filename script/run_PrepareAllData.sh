@@ -20,10 +20,10 @@ SUBMIT_COMMAND="spark-submit --class com.combient.sparkjob.tedsds.PrepareData --
 
 hadoop fs -rm -r -f /share/tedsds/scaleddftest*
 
-$SUBMIT_COMMAND /share/tedsds/input/test_FD001.txt /share/tedsds/scaleddftest_FD001/
-$SUBMIT_COMMAND /share/tedsds/input/test_FD002.txt /share/tedsds/scaleddftest_FD002/
-$SUBMIT_COMMAND /share/tedsds/input/test_FD003.txt /share/tedsds/scaleddftest_FD003/
-$SUBMIT_COMMAND /share/tedsds/input/test_FD004.txt /share/tedsds/scaleddftest_FD004/
+#$SUBMIT_COMMAND /share/tedsds/input/test_FD001.txt /share/tedsds/scaleddftest_FD001/
+#$SUBMIT_COMMAND /share/tedsds/input/test_FD002.txt /share/tedsds/scaleddftest_FD002/
+#$SUBMIT_COMMAND /share/tedsds/input/test_FD003.txt /share/tedsds/scaleddftest_FD003/
+#$SUBMIT_COMMAND /share/tedsds/input/test_FD004.txt /share/tedsds/scaleddftest_FD004/
 
 $SUBMIT_COMMAND /share/tedsds/input/train_FD001.txt /share/tedsds/scaleddftrain_FD001/
 $SUBMIT_COMMAND /share/tedsds/input/train_FD002.txt /share/tedsds/scaleddftrain_FD002/
