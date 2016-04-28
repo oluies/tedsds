@@ -74,11 +74,11 @@ object RunRandomForest2 {
 
   def run(params: Params) {
 
-
-
+    //Start Spark context
     val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
+    //Print the input file
     val input = params.input
     println(s"Input dataset = $input")
 
@@ -99,39 +99,42 @@ object RunRandomForest2 {
 
     val indexed = labelIndexer.transform(scaledDF)
 
+    //Create an RDD suitable for the ML algorithm
     val trainRDD : RDD[LabeledPoint] = indexed
       .select($"indexedLabel", $"scaledFeatures")
       .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
 
+    //Tell Spark to keep the data in memory
     trainRDD.cache()
 
     // Train a RandomForest model.
     // Empty categoricalFeaturesInfo indicates all features are continuous.
     val numClasses = 3 // 0-2
-    val categoricalFeaturesInfo = Map[Int, Int]()
+    val categoricalFeaturesInfo = Map[Int, Int]()   //
     val numTrees = 666
     val featureSubsetStrategy = "auto" // Let the algorithm choose.
     val impurity = "gini"
     val maxDepth = 6
     val maxBins = 32
 
+    // Train the model
     val model: RandomForestModel = RandomForest.trainClassifier(trainRDD, numClasses,
       categoricalFeaturesInfo, numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
 
-    // Compute raw scores on the test set
+    // Predict the labels of the training data
     val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
       val prediction = model.predict(features)
       (prediction, label)
     }
 
-    // Instantiate metrics object
+    // Evaluate the model
     val metrics = new MulticlassMetrics(predictionAndLabels)
 
-    // Confusion matrix
-    println("Confusion matrix:")
+    // Print the confusion matrix
+    println("Confusion matrix --- Training data:")
     println(metrics.confusionMatrix)
 
-
+    // Save the model
     if(params.model != ""){
       model.save(sc,"%s".format(params.model))
       print("Saved model as %s".format(params.model))
