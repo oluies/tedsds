@@ -5,10 +5,10 @@
 
 
 #Simple attempt to figure out the relative path to the data
-if [[ $0 == "./script/hadoopfs.sh" ]] 
+if [[ $0 == "./script/hadoopfs.sh" ]]
 then
 	DATADIR=./data
-else 
+else
 if [[ $0 == "./hadoopfs.sh" ]]
 then
 	DATADIR=../data
@@ -20,10 +20,10 @@ fi
 
 
 #Decompress the data
-for i in `ls $DATADIR/test_*.gz $DATADIR/train_*.gz` 
-do 
-	j=`echo $i | sed "s/\.gz//" ` 
-	gunzip -c $i > $j 
+for i in `ls $DATADIR/test_*.gz $DATADIR/train_*.gz`
+do
+	j=`echo $i | sed "s/\.gz//" `
+	gunzip -c $i > $j
 done
 
 #Add IDs to the Truth file
@@ -53,6 +53,8 @@ hadoop fs -put $DATADIR/RUL_FD002.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/RUL_FD003.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/RUL_FD004.txt  /share/tedsds/input/
 
+
+# The files below are only required for the toy example 'run_toy.sh'
 hadoop fs -put $DATADIR/RUL_toy.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/train_toy.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/test_toy.txt  /share/tedsds/input/
@@ -63,4 +65,4 @@ hadoop fs -put $DATADIR/test_toy.txt  /share/tedsds/input/
 hadoop fs -ls /share/tedsds/input/
 
 #Remove uncompressed data
-#rm -rf $DATADIR/*.txt
+rm -rf $DATADIR/*.txt
