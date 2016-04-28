@@ -166,11 +166,8 @@ class PrepareData {
         .withColumn("rul", maxcycle("maxcycle") - df("cycle")) // Add RUL as maxcycle-currentcycle per row
 
       withrul.drop("maxcycle")
-      withrul.drop("RUL_at_maxcycle")
-      withrul.drop("last_test_cycle")
-
-
-      withrul
+             .drop("RUL_at_maxcycle")
+             .drop("last_test_cycle")
   }
 
   /*
@@ -285,8 +282,8 @@ class PrepareData {
 
         //Drop temporary features:  featurescolumn, maxcycle
         scaledDF.drop("features")
-        scaledDF.drop("maxcycle")
-        scaledDF
+                .drop("maxcycle")
+
   }
 }
 

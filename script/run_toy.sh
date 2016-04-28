@@ -13,7 +13,7 @@ else
 	exit
 fi
 fi
-
+TARGETDIR=./target
 
 #Compile and assemble the code
 sbt assembly
@@ -34,11 +34,11 @@ $SUBMIT_COMMAND_TEST /share/tedsds/input/test_toy.txt /share/tedsds/input/RUL_to
 mkdir -p tmp_data
 cd tmp_data
 rm -rf ./*
-hadoop fs -get /share/tedsds/*_toy* ./
+hadoop fs -get /share/tedsds/toy* ./
 
 #Convert the csv files from Spark-csv to normal csv files
-../script/sparkcsv2csv.sh ./train_toy_unscaled.csv/
-../script/sparkcsv2csv.sh ./train_toy.csv/
-../script/sparkcsv2csv.sh ./test_toy.csv/
-../script/sparkcsv2csv.sh ./test_toy_unscaled.csv/
+../script/sparkcsv2csv.sh ./toy_train_unscaled.csv/
+../script/sparkcsv2csv.sh ./toy_train.csv/
+../script/sparkcsv2csv.sh ./toy_test.csv/
+../script/sparkcsv2csv.sh ./toy_test_unscaled.csv/
 

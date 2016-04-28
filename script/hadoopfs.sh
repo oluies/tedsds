@@ -27,10 +27,10 @@ do
 done
 
 #Add IDs to the Truth file
-for i in `ls $DATADIR/RUL_* `
+for i in `ls $DATADIR/RUL_*.gz `
 do
     j=`echo $i | sed "s/\.gz//" `
-	gunzip -c  $i | awk '{printf "%d\ %s\n", NR, $0}' > $j
+	gunzip -c  $i | awk '{printf "%d %s\n", NR, $0}' > $j
 done
 
 
