@@ -9,7 +9,7 @@
 ## And transform it into a standart .csv file to be opened in Excel
 
 
-FILE=$1
+FILE=`echo $1 | sed "s/\/$//" `
 
 mv $FILE ${FILE}_tmp
 head -n 1 ${FILE}_tmp/part-00000  > $FILE

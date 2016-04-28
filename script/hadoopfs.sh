@@ -20,11 +20,19 @@ fi
 
 
 #Decompress the data
-for i in `ls $DATADIR/*.gz` 
+for i in `ls $DATADIR/test_*.gz $DATADIR/train_*.gz` 
 do 
 	j=`echo $i | sed "s/\.gz//" ` 
 	gunzip -c $i > $j 
 done
+
+#Add IDs to the Truth file
+for i in `ls $DATADIR/RUL_* `
+do
+    j=`echo $i | sed "s/\.gz//" `
+	gunzip -c  $i | awk '{printf "%d\ %s\n", NR, $0}' > $j
+done
+
 
 
 #Clean up HDFS to avoid "Error - file exist"
@@ -45,8 +53,14 @@ hadoop fs -put $DATADIR/RUL_FD002.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/RUL_FD003.txt  /share/tedsds/input/
 hadoop fs -put $DATADIR/RUL_FD004.txt  /share/tedsds/input/
 
+hadoop fs -put $DATADIR/RUL_toy.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/train_toy.txt  /share/tedsds/input/
+hadoop fs -put $DATADIR/test_toy.txt  /share/tedsds/input/
+
+
+
 #Print the content of the folder in HDFS
 hadoop fs -ls /share/tedsds/input/
 
 #Remove uncompressed data
-rm -rf $DATADIR/*.txt
+#rm -rf $DATADIR/*.txt
