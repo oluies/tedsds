@@ -248,12 +248,8 @@ class PrepareData {
 
         // filter away columns from
         // these columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-        //val columns = withMeans.columns.diff(Seq("id","maxcycle","rul","label1", "label2"))
-        //println(s"assembler these columns to  features vector ${columns.toList}")
-
-        //RQ: I think it is better to put this filtering in the model part, not in the data prep section.
-        val columns = df.columns
-
+        val columns = withMeans.columns.diff(Seq("id","maxcycle","rul","label1", "label2"))
+        println(s"assembler these columns to  features vector ${columns.toList}")
 
         //see https://spark.apache.org/docs/latest/ml-features.html
         // columns to feature vector
