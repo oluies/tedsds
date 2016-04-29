@@ -20,7 +20,6 @@ package com.combient.sparkjob.tedsds
 
 import org.apache.spark.ml.feature.StringIndexer
 import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
-import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
@@ -68,16 +67,17 @@ object RunLogisticRegressionWithLBFGS {
 
   def run(params: Params) {
 
-    val conf = new SparkConf().setAppName(s"RunLogisticRegressionWithLBFGS with $params")
+    //Start Spark context
+    val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
+    //Print the input file
     val input = params.input
     println(s"Input dataset = $input")
 
 
     // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
     val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
     // Load training data
     val scaledDF = sqlContext.read.parquet(input)
 
@@ -91,24 +91,33 @@ object RunLogisticRegressionWithLBFGS {
 
     val indexed = labelIndexer.transform(scaledDF)
 
-    val data : RDD[LabeledPoint] = indexed
+    //Create an RDD suitable for the ML algorithm
+    import sqlContext.implicits._
+    val trainRDD : RDD[LabeledPoint] = indexed
       .select($"indexedLabel", $"scaledFeatures")
       .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
 
-
-    data.cache()
+      //Tell Spark to keep the data in memory
+      trainRDD.cache()
 
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
       .setNumClasses(3)
-      .run(data)
+      .run(trainRDD)
 
-    if(params.model != ""){
-      model.save(sc, "%s".format(params.model))
-      print("Saved model as %s".format(params.model))
-    }
 
+    // Predict the labels of the training data
+    val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
+    val prediction = model.predict(features)
+        (prediction, label)
+      }
+
+    // Evaluate the model
+    ModelEvaluator.evaluatePrediction(predictionAndLabels,"Logistic Classifier --- Training set")
+
+    //Stop the sparkContext
     sc.stop()
+
   }
 }
 // scalastyle:on println

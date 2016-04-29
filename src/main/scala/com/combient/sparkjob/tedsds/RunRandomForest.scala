@@ -18,19 +18,18 @@
 // scalastyle:off println
 package com.combient.sparkjob.tedsds
 
-import org.apache.spark.ml.feature.StringIndexer
-import org.apache.spark.ml.classification.RandomForestClassifier
 import org.apache.spark.ml.{PipelineModel, Pipeline}
 import org.apache.spark.ml.feature.StringIndexer
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
+import org.apache.spark.mllib.tree.RandomForest
+import org.apache.spark.mllib.tree.model.RandomForestModel
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
 
-case class Record(category: String, features: Vector)
 
 object RunRandomForest {
 
@@ -72,11 +71,11 @@ object RunRandomForest {
 
   def run(params: Params) {
 
-
-
-    val conf = new SparkConf().setAppName(s"RunRandomForest with $params")
+    //Start Spark context
+    val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
+    //Print the input file
     val input = params.input
     println(s"Input dataset = $input")
 
@@ -92,40 +91,43 @@ object RunRandomForest {
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
       .setInputCol("label2")
-      .setOutputCol("label")
+      .setOutputCol("indexedLabel")
       .fit(scaledDF)
 
     val indexed = labelIndexer.transform(scaledDF)
 
-    val trainRDD : RDD[Record] = indexed
-      .select($"label", $"scaledFeatures")
-      .map{case Row(label: Double, scaledFeatures: Vector) => Record(label.toString, scaledFeatures)}
+    //Create an RDD suitable for the ML algorithm
+    val trainRDD : RDD[LabeledPoint] = indexed
+      .select($"indexedLabel", $"scaledFeatures")
+      .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
 
+    //Tell Spark to keep the data in memory
     trainRDD.cache()
 
-    //  trick with StringIndexer. After applying we get required attributes ({"vals":["1.0","0.0"],"type":"nominal","name":"label"}) but some classes in ml seem to work just fine without it.
-    val indexer = new StringIndexer()
-      .setInputCol("category")
-      .setOutputCol("label")
+    // Train a RandomForest model.
+    // Empty categoricalFeaturesInfo indicates all features are continuous.
+    val numClasses = 3 // 0-2
+    val categoricalFeaturesInfo = Map[Int, Int]()   //
+    val numTrees = 3
+    val featureSubsetStrategy = "auto" // Let the algorithm choose.
+    val impurity = "gini"
+    val maxDepth = 4
+    val maxBins = 32
 
-    val rf  = new RandomForestClassifier()
-      .setNumTrees(3)
-      .setFeatureSubsetStrategy("auto")
-      .setImpurity("gini")
-      .setMaxDepth(4)
-      .setMaxBins(32)
+    // Train the model
+    val model: RandomForestModel = RandomForest.trainClassifier(trainRDD, numClasses,
+      categoricalFeaturesInfo, numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
 
-    val pipeline = new Pipeline().setStages(Array(indexer,rf))
-
-    val model: PipelineModel = pipeline.fit(trainRDD.toDF())
-
-    if(params.model != ""){
-      model.save("%s".format(params.model))
-      print("Saved model as %s".format(params.model))
-
-      //Exception in thread "main" java.lang.UnsupportedOperationException: Pipeline write will fail on this Pipeline because it contains a stage which does not implement Writable. Non-Writable stage: rfc_10877961fe5f of type class org.apache.spark.ml.classification.RandomForestClassificationModel
+    // Predict the labels of the training data
+    val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
+      val prediction = model.predict(features)
+      (prediction, label)
     }
 
+    // Evaluate the model
+    ModelEvaluator.evaluatePrediction(predictionAndLabels,"Random forest (#tree=3 , depth=4) --- Training set")
+
+    //Stop the sparkContext
     sc.stop()
   }
 }
