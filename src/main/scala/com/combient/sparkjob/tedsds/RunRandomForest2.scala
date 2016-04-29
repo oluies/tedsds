@@ -18,11 +18,8 @@
 // scalastyle:off println
 package com.combient.sparkjob.tedsds
 
-import org.apache.spark.ml.feature.StringIndexer
-import org.apache.spark.ml.classification.RandomForestClassifier
 import org.apache.spark.ml.{PipelineModel, Pipeline}
 import org.apache.spark.ml.feature.StringIndexer
-import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.tree.RandomForest
@@ -128,17 +125,8 @@ object RunRandomForest2 {
     }
 
     // Evaluate the model
-    val metrics = new MulticlassMetrics(predictionAndLabels)
+    ModelEvaluator.evaluatePrediction(predictionAndLabels,"Random forest (#tree=666 , depth=6) --- Training set")
 
-    // Print the confusion matrix
-    println("Confusion matrix --- Training data:")
-    println(metrics.confusionMatrix)
-
-    // Save the model
-    if(params.model != ""){
-      model.save(sc,"%s".format(params.model))
-      print("Saved model as %s".format(params.model))
-    }
 
     sc.stop()
   }

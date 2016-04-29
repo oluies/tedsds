@@ -20,7 +20,6 @@ package com.combient.sparkjob.tedsds
 
 import org.apache.spark.ml.feature.StringIndexer
 import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
-import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
@@ -79,7 +78,6 @@ object RunLogisticRegressionWithLBFGS {
 
     // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
     val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
     // Load training data
     val scaledDF = sqlContext.read.parquet(input)
 
@@ -94,6 +92,7 @@ object RunLogisticRegressionWithLBFGS {
     val indexed = labelIndexer.transform(scaledDF)
 
     //Create an RDD suitable for the ML algorithm
+    import sqlContext.implicits._
     val trainRDD : RDD[LabeledPoint] = indexed
       .select($"indexedLabel", $"scaledFeatures")
       .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
@@ -106,26 +105,19 @@ object RunLogisticRegressionWithLBFGS {
       .setNumClasses(3)
       .run(trainRDD)
 
-      // Predict the labels of the training data
+
+    // Predict the labels of the training data
     val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
     val prediction = model.predict(features)
         (prediction, label)
       }
 
-      // Evaluate the model
-    val metrics = new MulticlassMetrics(predictionAndLabels)
+    // Evaluate the model
+    ModelEvaluator.evaluatePrediction(predictionAndLabels,"Logistic Classifier --- Training set")
 
-    // Print the confusion matrix
-    println("Confusion matrix --- Training data:")
-    println(metrics.confusionMatrix)
-
-    // Save the model
-    if(params.model != ""){
-      model.save(sc, "%s".format(params.model))
-      print("Saved model as %s".format(params.model))
-    }
-
+    //Stop the sparkContext
     sc.stop()
+
   }
 }
 // scalastyle:on println

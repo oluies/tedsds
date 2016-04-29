@@ -16,7 +16,16 @@ else
 fi
 fi
 
+### The next block of code trains a logistic classifier and analyze its performance on 
+### on a  validation set created by randomly subsampling the training data
 
+#Define command, clean HDFS and learn a Logistic Classifier on the 4 training sets
+SUBMIT_COMMAND="spark-submit --class com.combient.sparkjob.tedsds.RunLogisticRegressionWithValidationData --master yarn $TARGETDIR/scala-2.10/tedsds-assembly-1.0.jar"
+hadoop fs -rm -r -f /share/tedsds/example_model*
+$SUBMIT_COMMAND  /share/tedsds/scaleddftrain_FD001 /share/tedsds/example_model
+
+
+### Below we train all the models isung all the data for training (= without validation set)
 #Define command, clean HDFS and learn a Logistic Classifier on the 4 training sets
 SUBMIT_COMMAND="spark-submit --class com.combient.sparkjob.tedsds.RunLogisticRegressionWithLBFGS --master yarn $TARGETDIR/scala-2.10/tedsds-assembly-1.0.jar"
 hadoop fs -rm -r -f /share/tedsds/lr_model*

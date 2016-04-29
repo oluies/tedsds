@@ -18,20 +18,16 @@
 // scalastyle:off println
 package com.combient.sparkjob.tedsds
 
-import org.apache.spark.ml.{PipelineModel, Pipeline}
 import org.apache.spark.ml.feature.StringIndexer
+import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.mllib.tree.RandomForest
-import org.apache.spark.mllib.tree.model.RandomForestModel
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
-
-
-object RunRandomForest {
+object RunLogisticRegressionWithValidationData {
 
   case class Params(input: String = null,model: String = null)
 
@@ -40,7 +36,7 @@ object RunRandomForest {
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
-      head("RunRandomForest: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
+      head("RunLogisticRegressionWithLBFGS: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
       arg[String]("<input>")
         .required()
         .text("hdfs input paths to a parquet dataset ")
@@ -53,7 +49,7 @@ object RunRandomForest {
         """
           |For example, the following command runs this app on a  dataset:
           |
-          | bin/spark-submit --class com.combient.sparkjob.tedsds.RunRandomForest \
+          | bin/spark-submit --class com.combient.sparkjob.tedsds.RunLogisticRegressionWithLBFGS \
           |  jarfile.jar \
           |  /share/tedsds/scaledd \
           |  /share/tedsds/savedmodel
@@ -82,7 +78,6 @@ object RunRandomForest {
 
     // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
     val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
     // Load training data
     val scaledDF = sqlContext.read.parquet(input)
 
@@ -97,38 +92,50 @@ object RunRandomForest {
     val indexed = labelIndexer.transform(scaledDF)
 
     //Create an RDD suitable for the ML algorithm
-    val trainRDD : RDD[LabeledPoint] = indexed
+    import sqlContext.implicits._
+    val dataRDD : RDD[LabeledPoint] = indexed
       .select($"indexedLabel", $"scaledFeatures")
       .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
 
-    //Tell Spark to keep the data in memory
-    trainRDD.cache()
+    //***********************************
+    // Split data into training (80%) and test (20%)
+    val Array(training, validation) = dataRDD.randomSplit(Array(0.80, 0.20), seed = 11L)
+    training.cache()
+    //***********************************
 
-    // Train a RandomForest model.
-    // Empty categoricalFeaturesInfo indicates all features are continuous.
-    val numClasses = 3 // 0-2
-    val categoricalFeaturesInfo = Map[Int, Int]()   //
-    val numTrees = 3
-    val featureSubsetStrategy = "auto" // Let the algorithm choose.
-    val impurity = "gini"
-    val maxDepth = 4
-    val maxBins = 32
+    // Run training algorithm to build the model
+    val model = new LogisticRegressionWithLBFGS()
+      .setNumClasses(3)
+      .run(training)
 
-    // Train the model
-    val model: RandomForestModel = RandomForest.trainClassifier(trainRDD, numClasses,
-      categoricalFeaturesInfo, numTrees, featureSubsetStrategy, impurity, maxDepth, maxBins)
-
-    // Predict the labels of the training data
-    val predictionAndLabels = trainRDD.map { case LabeledPoint(label, features) =>
+    // Predict the labels of the TRAINING data
+    val predictionAndLabelsTrain = training.map { case LabeledPoint(label, features) =>
       val prediction = model.predict(features)
       (prediction, label)
     }
 
-    // Evaluate the model
-    ModelEvaluator.evaluatePrediction(predictionAndLabels,"Random forest (#tree=3 , depth=4) --- Training set")
+
+    //***********************************
+    // Predict the labels of the VALIDATION data
+    val predictionAndLabelsValidation = validation.map { case LabeledPoint(label, features) =>
+      val prediction = model.predict(features)
+      (prediction, label)
+    }
+
+
+    // Evaluate the model on the TRAINING data
+    ModelEvaluator.evaluatePrediction(predictionAndLabelsTrain,"Logistic Classifier --- Training set")
+
+    // Evaluate the model on the VALIDATION data
+    ModelEvaluator.evaluatePrediction(predictionAndLabelsValidation,"Logistic Classifier --- Validation set")
+
+    //***********************************
+
+
 
     //Stop the sparkContext
     sc.stop()
+
   }
 }
 // scalastyle:on println
