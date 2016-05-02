@@ -334,10 +334,7 @@ object PrepareTrainData extends PrepareData {
 
       val df = readDataFile(sqlContext,params.input)
 
-
-      //df.persist() //Is this line usefless ?
-
-      df.cache() // Tell Spark to keep the data in memory. See: http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence
+      df.cache() // Tell Spark to (try to) keep the data in memory. See: http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence
 
       //Group the data by operation modes
       val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
