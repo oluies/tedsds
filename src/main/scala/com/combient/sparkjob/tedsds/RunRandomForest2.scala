@@ -124,6 +124,13 @@ object RunRandomForest2 {
       (prediction, label)
     }
 
+    // Save the model
+    if(params.model != ""){
+      model.save(sc,"%s".format(params.model))
+      print("Saved model as %s".format(params.model))
+    }
+
+
     // Evaluate the model
     ModelEvaluator.evaluatePrediction(predictionAndLabels,"Random forest (#tree=666 , depth=6) --- Training set")
 
