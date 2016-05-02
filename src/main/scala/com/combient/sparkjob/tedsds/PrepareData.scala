@@ -125,6 +125,9 @@ class PrepareData {
     val stddevcols: IndexedSeq[Column] = 1 to 21 map(id => stddevCol(id))
 
     val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union meancols.toSeq union stddevcols.toSeq
+
+    // :_* - expands the sequence for the vararg constructor in select
+    // see The Scala Language Specification 4.6.2 Repeated Parameters"
     val withMeans = withrul.select(selectAll :_*)
 
     withMeans
