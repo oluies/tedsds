@@ -18,5 +18,5 @@ echo " Pythonpath "$PYTHONPATH
 export SPARK_YARN_USER_ENV="PYTHONPATH=${PYTHONPATH}"
 
 echo $SPARK_HOME
-luigid  --background  $*
+/usr/local/bin/luigid  --background  $*
 
