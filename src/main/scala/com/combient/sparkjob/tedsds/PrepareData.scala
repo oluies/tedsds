@@ -381,7 +381,7 @@ object PrepareTrainData extends PrepareData {
 
 object PrepareTestData extends PrepareData {
 
-  case class Params(input: String = null,truth: String = null,output: String = null)
+  case class Params(input: String = null,truth: String = null,output: String = null,disablecsv:Boolean = false)
 
   def main(args: Array[String]) {
     val defaultParams = Params()
@@ -400,6 +400,8 @@ object PrepareTestData extends PrepareData {
       .required()
       .text("hdfs output paths parquet output ")
       .action((x, c) => c.copy(output = x.trim))
+      opt[Unit]("disablecsv") action { (_, c) =>
+        c.copy(disablecsv = true) } text("disablecsv is a flag")
       note(
         """
         |For example, the following command runs this app on a  dataset:
@@ -461,15 +463,17 @@ object PrepareTestData extends PrepareData {
       scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
 
 
-      //Optionally save as CSV (for debugging purposes)
-      scaledDF.write.mode(SaveMode.Overwrite)
-                    .format("com.databricks.spark.csv")
-                    .option("header", "true")
-                    .save(params.output.concat(".csv"))
-      withMeans.write.mode(SaveMode.Overwrite)
-                    .format("com.databricks.spark.csv")
-                    .option("header", "true")
-                    .save(params.output.concat("_unscaled.csv"))
+      if(params.disablecsv){
+        //Optionally save as CSV (for debugging purposes)
+        scaledDF.write.mode(SaveMode.Overwrite)
+                      .format("com.databricks.spark.csv")
+                      .option("header", "true")
+                      .save(params.output.concat(".csv"))
+        withMeans.write.mode(SaveMode.Overwrite)
+                      .format("com.databricks.spark.csv")
+                      .option("header", "true")
+                      .save(params.output.concat("_unscaled.csv"))
+      }
       sc.stop()
     }
 
