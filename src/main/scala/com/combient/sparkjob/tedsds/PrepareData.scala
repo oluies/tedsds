@@ -401,7 +401,7 @@ object PrepareTestData extends PrepareData {
       .text("hdfs output paths parquet output ")
       .action((x, c) => c.copy(output = x.trim))
       opt[Unit]("disablecsv") action { (_, c) =>
-        c.copy(disablecsv = true) } text("disablecsv is a flag")
+        c.copy(disablecsv = true) } text("disablecsv is a flag if false to not write csv")
       note(
         """
         |For example, the following command runs this app on a  dataset:
