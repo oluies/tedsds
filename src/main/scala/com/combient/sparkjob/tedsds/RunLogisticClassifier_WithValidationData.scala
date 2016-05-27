@@ -29,7 +29,7 @@ import scopt.OptionParser
 
 object RunLogisticRegressionWithValidationData {
 
-  case class Params(input: String = null,model: String = null)
+  case class Params(input: String = null,model: String = null,label: Int = 2)
 
   def main(args: Array[String]): Unit = {
 
@@ -45,6 +45,10 @@ object RunLogisticRegressionWithValidationData {
         .optional()
         .text("hdfs output paths saved model ")
         .action((x, c) => c.copy(model = x.trim))
+      opt[Int]('l',"label")
+        .optional()
+        .action { (x, c) => c.copy(label = x) }
+        .text("What label to use")
       note(
         """
           |For example, the following command runs this app on a  dataset:
@@ -53,6 +57,7 @@ object RunLogisticRegressionWithValidationData {
           |  jarfile.jar \
           |  /share/tedsds/scaledd \
           |  /share/tedsds/savedmodel
+          |  --label  1/2 (which label to use)
         """.stripMargin)
     }
 
@@ -71,9 +76,22 @@ object RunLogisticRegressionWithValidationData {
     val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
-    //Print the input file
+    //Chose which label to use
+    var labeltouse : String = "label2"
+    var nbClasses : Int = 3
+
+    if (params.label == 1 ){
+      labeltouse = "label1"
+      nbClasses = 2
+    }
+
+    //Print information about the model
     val input = params.input
+    val output = params.model
+    println("Logistic regression with validation data")
     println(s"Input dataset = $input")
+    println(s"Output file = $output")
+    println(s"Using $labeltouse")
 
 
     // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
@@ -85,7 +103,7 @@ object RunLogisticRegressionWithValidationData {
     // Index labels, adding metadata to the label column.
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
-      .setInputCol("label2")
+      .setInputCol(labeltouse)
       .setOutputCol("indexedLabel")
       .fit(scaledDF)
 
@@ -105,7 +123,7 @@ object RunLogisticRegressionWithValidationData {
 
     // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
-      .setNumClasses(3)
+      .setNumClasses(nbClasses)
       .run(training)
 
     // Predict the labels of the TRAINING data

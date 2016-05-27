@@ -33,7 +33,7 @@ import scopt.OptionParser
 
 object RunRandomForest {
 
-  case class Params(input: String = null,model: String = null)
+  case class Params(input: String = null,model: String = null,label: Int = 2)
 
   def main(args: Array[String]): Unit = {
 
@@ -49,6 +49,10 @@ object RunRandomForest {
         .optional()
         .text("hdfs output paths saved model ")
         .action((x, c) => c.copy(model = x.trim))
+      opt[Int]('l',"label")
+        .optional()
+        .action { (x, c) => c.copy(label = x) }
+        .text("What label to use")
       note(
         """
           |For example, the following command runs this app on a  dataset:
@@ -57,6 +61,7 @@ object RunRandomForest {
           |  jarfile.jar \
           |  /share/tedsds/scaledd \
           |  /share/tedsds/savedmodel
+          |  --label  1/2 (which label to use)
         """.stripMargin)
     }
 
@@ -75,10 +80,22 @@ object RunRandomForest {
     val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
     val sc = new SparkContext(conf)
 
-    //Print the input file
-    val input = params.input
-    println(s"Input dataset = $input")
+    //Chose which label to use
+    var labeltouse : String = "label2"
+    var nbClasses : Int = 3
 
+    if (params.label == 1 ){
+      labeltouse = "label1"
+      nbClasses = 2
+    }
+
+    //Print information about the model
+    val input = params.input
+    val output = params.model
+    println("Random Forest model")
+    println(s"Input dataset = $input")
+    println(s"Output file = $output")
+    println(s"Using $labeltouse")
 
     // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
     val sqlContext = new SQLContext(sc)
@@ -86,11 +103,10 @@ object RunRandomForest {
     // Load training data
     val scaledDF = sqlContext.read.parquet(input)
 
-
     // Index labels, adding metadata to the label column.
     // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
-      .setInputCol("label2")
+      .setInputCol(labeltouse)
       .setOutputCol("indexedLabel")
       .fit(scaledDF)
 
@@ -106,7 +122,7 @@ object RunRandomForest {
 
     // Train a RandomForest model.
     // Empty categoricalFeaturesInfo indicates all features are continuous.
-    val numClasses = 3 // 0-2
+    val numClasses = nbClasses // 0-2
     val categoricalFeaturesInfo = Map[Int, Int]()   //
     val numTrees = 3
     val featureSubsetStrategy = "auto" // Let the algorithm choose.
