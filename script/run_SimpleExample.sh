@@ -14,4 +14,3 @@ spark-submit --class com.combient.sparkjob.SimpleExample --master yarn ./target/
 
 #Get files from HDFS
 hadoop fs -get SimpleExample.*
-

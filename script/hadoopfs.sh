@@ -33,36 +33,39 @@ do
 	gunzip -c  $i | awk '{printf "%d %s\n", NR, $0}' > $j
 done
 
-ROOTHDFSFOLDER=tedsds
+### Location of the project folder in HDFS
+HDFSroot=/share/tedsds
+
+
 
 #Clean up HDFS to avoid "Error - file exist"
-hadoop fs -rm -r -f /share/${ROOTHDFSFOLDER}
+hadoop fs -rm -r -f $HDFSroot
 
 #Put the data
-hadoop fs -mkdir -p /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/test_FD001.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/test_FD002.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/test_FD003.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/test_FD004.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/train_FD001.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/train_FD002.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/train_FD003.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/train_FD004.txt /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/RUL_FD001.txt  /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/RUL_FD002.txt  /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/RUL_FD003.txt  /share/${ROOTHDFSFOLDER}/input/
-hadoop fs -put $DATADIR/RUL_FD004.txt  /share/${ROOTHDFSFOLDER}/input/
+hadoop fs -mkdir -p $HDFSroot/input/
+hadoop fs -put $DATADIR/test_FD001.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/test_FD002.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/test_FD003.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/test_FD004.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/train_FD001.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/train_FD002.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/train_FD003.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/train_FD004.txt $HDFSroot/input/
+hadoop fs -put $DATADIR/RUL_FD001.txt  $HDFSroot/input/
+hadoop fs -put $DATADIR/RUL_FD002.txt  $HDFSroot/input/
+hadoop fs -put $DATADIR/RUL_FD003.txt  $HDFSroot/input/
+hadoop fs -put $DATADIR/RUL_FD004.txt  $HDFSroot/input/
 
 
 # The files below are only required for the toy example 'run_toy.sh'
-hadoop fs -put $DATADIR/RUL_toy.txt  /share/tedsdsolu/input/
-hadoop fs -put $DATADIR/train_toy.txt  /share/tedsdsolu/input/
-hadoop fs -put $DATADIR/test_toy.txt  /share/tedsdsolu/input/
+hadoop fs -put $DATADIR/RUL_toy.txt  $HDFSroot/input/
+hadoop fs -put $DATADIR/train_toy.txt  $HDFSroot/input/
+hadoop fs -put $DATADIR/test_toy.txt  $HDFSroot/input/
 
 
 
 #Print the content of the folder in HDFS
-hadoop fs -ls /share/tedsdsolu/input/
+hadoop fs -ls $HDFSroot/input/
 
 #Remove uncompressed data
 rm -rf $DATADIR/*.txt
