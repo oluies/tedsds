@@ -17,8 +17,8 @@ Publication: Research › Licentiate thesis, retrieved feb. 2016
 [Link](https://github.com/h2oai/h2o-tutorials/blob/master/tutorials/python-munging-modeling-pipelines/Munging-Modeling-Pipelines-Using-H2O-Pipelines.ipynb) [Presentation](https://www.youtube.com/watch?v=KqLXFglgNqk)
 7. Advanced Analytics with Spark - Patterns for Learning from Data at Scale By Sandy Ryza, Uri Laserson, Sean Owen, Josh Wills. [Link](http://shop.oreilly.com/product/0636920035091.do) [Examples](https://github.com/sryza/aas)
 8. The use of the area under the ROC curve in the evaluation of machine learning algorithms,Andrew P
-Bradley [Link](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.93.3818&rep=rep1&type=pdf) 
-9 A Few Useful Things to Know about Machine Learning, Pedro Domingos, [Link](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)
+Bradley [Link](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.93.3818&rep=rep1&type=pdf)
+9. A Few Useful Things to Know about Machine Learning, Pedro Domingos, [Link](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)
 
 ## Spark libraries
 1. https://github.com/databricks/spark-csv
