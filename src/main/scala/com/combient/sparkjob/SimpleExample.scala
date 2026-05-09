@@ -16,26 +16,22 @@
  *    #hadoop fs -rm -r -f SimpleExample.*
  *
  * Submit the job
- *    #spark-submit --class com.combient.sparkjob.SimpleExample --master yarn ./target/scala-2.10/tedsds-assembly-1.0.jar
+ *    #spark-submit --class com.combient.sparkjob.SimpleExample --master yarn ./target/scala-2.13/tedsds-assembly-1.0.jar
  *
  *
  */
 
 package com.combient.sparkjob
 
-import org.apache.spark.sql.SQLContext
-
-import org.apache.spark.{ SparkConf, SparkContext }
+import org.apache.spark.sql.SparkSession
 
 object SimpleExample {
 
   def main(args: Array[String]): Unit = {
 
-    //Create a spark context
-    val conf = new SparkConf().setAppName("SimpleExample")
-    val sc = new SparkContext(conf)
+    val spark = SparkSession.builder().appName("SimpleExample").getOrCreate()
+    import spark.implicits._
 
-    //Create some arbitrary data
     val schema = Seq("id", "cykle", "value")
     val data = Seq(
       (1, 1, 1),
@@ -51,25 +47,14 @@ object SimpleExample {
       (2, 5, 1),
       (2, 6, 11))
 
+    val dft = spark.sparkContext.parallelize(data).toDF(schema: _*)
 
-    //This create a "spark dataframe", i.e. a table in the spark formalism, distributed over the nodes.
-    val sqlContext = new SQLContext(sc)
-    import sqlContext.implicits._
-    val dft = sc.parallelize(data).toDF(schema: _*)
-
-
-    //Write the data into parquet format, a file format optimized for storing Spark dataframe
     dft.write.parquet("SimpleExample.parquet")
 
-    //Write the data into standard CSV format
-    import org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType};
-    dft.write.format("com.databricks.spark.csv").option("header", "true").save("SimpleExample.csv")
-
+    dft.write.option("header", "true").csv("SimpleExample.csv")
 
     println(s"############################## Count: ${dft.count()} ############################## ")
 
-    //Terminates the spark context
-    sc.stop()
-
+    spark.stop()
   }
 }
