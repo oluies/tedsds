@@ -4,16 +4,13 @@ package com.combient.sparkjob.tedsds
   * Created by olu on 09/03/16.
   */
 
+import org.apache.spark.ml.clustering.{KMeans, KMeansModel}
 import org.apache.spark.ml.feature.{MinMaxScaler, VectorAssembler}
-import org.apache.spark.sql.expressions.{WindowSpec, Window}
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.hive.HiveContext
-import org.apache.spark.sql.types.{DoubleType, IntegerType, StructField, StructType}
 import org.apache.spark.sql._
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.sql.expressions.Window
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types.{DoubleType, IntegerType, StructField, StructType}
 import scopt.OptionParser
-import org.apache.spark.ml.clustering.{KMeansModel, KMeans}
-import org.apache.spark.mllib.linalg.Vectors
 
 import scala.collection.immutable.IndexedSeq
 
@@ -64,149 +61,104 @@ class PrepareData {
   /*
     Standardize a value as std<x> as s - a/sd (signal - average signal / standard deviation)
    */
-  def stdizedOperationmode(sqLContext: SQLContext, withrul: DataFrame): DataFrame = {
-    // see http://spark.apache.org/docs/latest/sql-programming-guide.html
-    import sqLContext.implicits._
+  def stdizedOperationmode(spark: SparkSession, withrul: DataFrame): DataFrame = {
     val AZ: Column  = lit(0.00000001)
 
-    def opMode(id:Int): Column = {
+    def opMode(id: Int): Column = {
       (column("s"+id) - coalesce(column("a"+id) / column("sd"+id), column("a"+id) / lit(AZ))).as("std"+id)
     }
 
-    // add the 21 std<i> columns based on s<i> - (a<id>/sd<id>)
     val columns: IndexedSeq[Column] = 1 to 21 map(id => opMode(id))
-    val allColumns = withrul.columns union columns
-    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union columns.toSeq
-    val withStd = withrul.select(selectAll :_*)
-
-    withStd
+    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) ++ columns
+    withrul.select(selectAll.toIndexedSeq: _*)
   }
 
   /*
-    Calculate the standard deviation and mean for each column
-
-    Same as :
-    val x = withrul.select('*,
-      mean($"s1").over(w).as("a1"),
-      sqrt( sum(pow($"s1" -  mean($"s1").over(w),2)).over(w) / 5).as("sd1"),
-
-      mean($"s2").over(w).as("a2"),
-      sqrt( sum(pow($"s2" -  mean($"s2").over(w),2)).over(w) / 5).as("sd2"),
-
-      mean($"s3").over(w).as("a3"),
-      sqrt( sum(pow($"s3" -  mean($"s3").over(w),2)).over(w) / 5).as("sd3"),
-
-
+    Calculate the standard deviation and mean for each column over a sliding window.
    */
-  def calculateMeanSdev(sqLContext: SQLContext,withrul: DataFrame): DataFrame = {
-    // see http://spark.apache.org/docs/latest/sql-programming-guide.html
-    import sqLContext.implicits._
-
+  def calculateMeanSdev(spark: SparkSession, withrul: DataFrame): DataFrame = {
     val windowRange = 5
-    // see https://databricks.com/blog/2015/07/15/introducing-window-functions-in-spark-sql.html
-    //     http://spark.apache.org/docs/latest/sql-programming-guide.html
-    // PARTITION BY id  ORDER BY cycle ROWS BETWEEN 2 PRECEDING AND 2 FOLLOWING (5)
-    // RQ by Nicolas: this should really be changed to rows "-5:0" --- -2:2 is equivalent to do a look ahead in the future
+    val w = Window.partitionBy("id").orderBy("cycle").rowsBetween(-windowRange + 1, 0)
 
-    val w = Window.partitionBy("id").orderBy("cycle").rowsBetween(-windowRange+1,0)
-
-    def meanCol(id:Int): Column = {
+    def meanCol(id: Int): Column = {
       val col: Column = column("s"+id)
       mean(col).over(w).as("a"+id)
     }
 
-    def stddevCol(id:Int): Column = {
+    def stddevCol(id: Int): Column = {
       val col: Column = column("s"+id)
-      sqrt(sum(pow(col- mean(col).over(w), 2)).over(w) / windowRange).as("sd"+id)
+      sqrt(sum(pow(col - mean(col).over(w), 2)).over(w) / windowRange).as("sd"+id)
     }
 
-    // add the 21 columns
     val meancols: IndexedSeq[Column] = 1 to 21 map(id => meanCol(id))
     val stddevcols: IndexedSeq[Column] = 1 to 21 map(id => stddevCol(id))
 
-    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) union meancols.toSeq union stddevcols.toSeq
-
-    // :_* - expands the sequence for the vararg constructor in select
-    // see The Scala Language Specification 4.6.2 Repeated Parameters"
-    val withMeans = withrul.select(selectAll :_*)
-
-    withMeans
+    val selectAll: Array[Column] = (for (i <- withrul.columns) yield withrul(i)) ++ meancols ++ stddevcols
+    withrul.select(selectAll.toIndexedSeq: _*)
   }
 
-  def addOPmode(sqLContext: SQLContext,df: DataFrame, operationModePredictions: DataFrame): DataFrame = {
-    import sqLContext.implicits._
-    val withOPMode = df.as('a).join(operationModePredictions.as('b), $"a.id" === $"b.id" and $"a.cycle" === $"b.cycle")
-
-    withOPMode.select($"a.*", $"b.operationmode" )
+  def addOPmode(spark: SparkSession, df: DataFrame, operationModePredictions: DataFrame): DataFrame = {
+    import spark.implicits._
+    val withOPMode = df.as("a").join(
+      operationModePredictions.as("b"),
+      $"a.id" === $"b.id" and $"a.cycle" === $"b.cycle"
+    )
+    withOPMode.select($"a.*", $"b.operationmode")
   }
 
-  def addRULtrain(sqLContext: SQLContext,df: DataFrame): DataFrame = {
-    import sqLContext.implicits._
-
-    //Finds the last cycle in the data (which corresponds to the failure in the training data)
+  def addRULtrain(spark: SparkSession, df: DataFrame): DataFrame = {
+    import spark.implicits._
     val maxCyclePerId = df.groupBy($"id").agg(max($"cycle").alias("maxcycle"))
-
-    addRUL(sqLContext,df,maxCyclePerId)
+    addRUL(spark, df, maxCyclePerId)
   }
 
-  def addRULtest(sqLContext: SQLContext,df: DataFrame,truth_at_maxcycle: DataFrame): DataFrame = {
-      import sqLContext.implicits._
+  def addRULtest(spark: SparkSession, df: DataFrame, truth_at_maxcycle: DataFrame): DataFrame = {
+    import spark.implicits._
 
+    val ltc_df = df.groupBy($"id").agg(max($"cycle").alias("last_test_cycle"))
 
-      val ltc_df = df.groupBy($"id").agg(max($"cycle").alias("last_test_cycle"))
+    val maxCyclePerId = ltc_df.join(truth_at_maxcycle, "id")
+      .withColumn("maxcycle", truth_at_maxcycle("RUL_at_maxcycle") + ltc_df("last_test_cycle"))
 
-      val maxCyclePerId = ltc_df.join(truth_at_maxcycle,"id")
-                 .withColumn("maxcycle",truth_at_maxcycle("RUL_at_maxcycle")+ltc_df("last_test_cycle"))
-
-      addRUL(sqLContext,df,maxCyclePerId)
+    addRUL(spark, df, maxCyclePerId)
   }
 
-  def addRUL(sqLContext: SQLContext,df: DataFrame,maxcycle: DataFrame): DataFrame = {
-      import sqLContext.implicits._
+  def addRUL(spark: SparkSession, df: DataFrame, maxcycle: DataFrame): DataFrame = {
+    val withrul = df.join(maxcycle, "id")
+      .withColumn("rul", maxcycle("maxcycle") - df("cycle"))
 
-      //Calculates the RUL and applies the labels
-      val withrul = df.join(maxcycle, "id")
-        .withColumn("rul", maxcycle("maxcycle") - df("cycle")) // Add RUL as maxcycle-currentcycle per row
-
-      withrul.drop("maxcycle")
-             .drop("RUL_at_maxcycle")
-             .drop("last_test_cycle")
+    withrul.drop("maxcycle")
+           .drop("RUL_at_maxcycle")
+           .drop("last_test_cycle")
   }
 
   /*
      add label 2 (1 if under w1, 2 if under w0, zero otherwize)
      */
-  def addLabels(sqLContext: SQLContext,df: DataFrame): DataFrame = {
-    import sqLContext.implicits._
-
-    //Define the values for converting the remaining usefull life (RUL) into labels
+  def addLabels(spark: SparkSession, df: DataFrame): DataFrame = {
+    import spark.implicits._
     val w1: Int = 30
     val w0: Int = 15
 
-    val withlabels = df
-        .withColumn("label1", when($"rul" <= w1, 1).otherwise(0)) // add label 1
-        .withColumn("label2", when($"rul" <= w0, 2).otherwise(when($"rul" <= w1, 1).otherwise(0)))
-    withlabels
+    df.withColumn("label1", when($"rul" <= w1, 1).otherwise(0))
+      .withColumn("label2", when($"rul" <= w0, 2).otherwise(when($"rul" <= w1, 1).otherwise(0)))
   }
 
   /*
      perform K Means clustering based on the operational settings
-
    */
-  def kMeansForOperationalModes(sqLContext: SQLContext,df: DataFrame): (KMeansModel, DataFrame) = {
-    // https://spark.apache.org/docs/latest/ml-clustering.html
-    import sqLContext.implicits._
-    val clusterDF = df.select($"id",$"cycle",$"setting1", $"setting2", $"setting3")
-    //see https://spark.apache.org/docs/latest/ml-features.html
-    // columns to feature vector
+  def kMeansForOperationalModes(spark: SparkSession, df: DataFrame): (KMeansModel, DataFrame) = {
+    import spark.implicits._
+    val clusterDF = df.select($"id", $"cycle", $"setting1", $"setting2", $"setting3")
+
     val assembler = new VectorAssembler()
       .setInputCols(Array("setting1", "setting2", "setting3"))
       .setOutputCol("features")
 
-    val clusterwfeatDF  = assembler.transform(clusterDF)
-    // Trains a k-means model
+    val clusterwfeatDF = assembler.transform(clusterDF)
+
     val kmeans = new KMeans()
-      .setK(6) //  6 operationmodes known apriori from dataset description
+      .setK(6)
       .setFeaturesCol("features")
       .setPredictionCol("operationmode")
     val model = kmeans.fit(clusterwfeatDF)
@@ -216,90 +168,55 @@ class PrepareData {
     (model, operationModePredictions)
   }
 
-  def readDataFile(sqlContext: SQLContext, input : String): DataFrame = {
-    val customSchema = getSchema
-
-    //Reads the data from disc and create a Spark DataFrame (~a data table)
-    val df: DataFrame = sqlContext.read
-      .format("com.databricks.spark.csv")
+  def readDataFile(spark: SparkSession, input: String): DataFrame = {
+    spark.read
       .option("header", "false")
-      .option("delimiter"," ")
-      //.option("treatEmptyValuesAsNulls","true")
-      .option("mode","PERMISSIVE")
-      .schema(customSchema)
-      .load(input)
-    df
+      .option("delimiter", " ")
+      .option("mode", "PERMISSIVE")
+      .schema(getSchema)
+      .csv(input)
   }
 
-
-  def readRULFile(sqlContext: SQLContext, input : String): DataFrame = {
-
-      val truthSchema = getSchemaTruth
-
-      val df: DataFrame = sqlContext.read
-                    .format("com.databricks.spark.csv")
-                    .option("header", "false")
-                    .option("delimiter"," ")
-                    //.option("treatEmptyValuesAsNulls","true")
-                    .option("mode","PERMISSIVE")
-                    .schema(truthSchema)
-                    .load(input)
-     df
+  def readRULFile(spark: SparkSession, input: String): DataFrame = {
+    spark.read
+      .option("header", "false")
+      .option("delimiter", " ")
+      .option("mode", "PERMISSIVE")
+      .schema(getSchemaTruth)
+      .csv(input)
   }
 
-  def scaleFeatures(sqlContext: SQLContext, df : DataFrame): DataFrame = {
+  def scaleFeatures(spark: SparkSession, df: DataFrame): DataFrame = {
 
-        // Filter away columns the features set
-        val columns = df.columns.diff(Seq("id","maxcycle","rul","label1", "label2"))
+    val columns = df.columns.diff(Seq("id", "maxcycle", "rul", "label1", "label2"))
 
-        //These columns had the lowest correlation factor :  "sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"
-        //Alternatively, we could try like this
-        //val columns = df.columns.diff(Seq("id","maxcycle","rul","label1", "label2","sd11","sd20","sd4","sd12","sd17","sd8","sd15","sd7","sd2","sd3","sd21","setting1","setting2"))
+    println(s"assembler these columns to  features vector ${columns.toList}")
 
-        println(s"assembler these columns to  features vector ${columns.toList}")
+    val assembler = new VectorAssembler()
+      .setInputCols(columns.toArray)
+      .setOutputCol("features")
+    val withFeatures = assembler.transform(df)
 
-        //see https://spark.apache.org/docs/latest/ml-features.html
-        // columns to feature vector
-        val assembler = new VectorAssembler()
-          .setInputCols(columns.toArray)
-          .setOutputCol("features")
-        val withFeatures = assembler.transform(df)
+    val scaler = new MinMaxScaler()
+      .setInputCol("features")
+      .setOutputCol("scaledFeatures")
 
+    val scaledDF = scaler.fit(withFeatures).transform(withFeatures)
 
-        // Define a scaler for rescaling the data so that all features have the same dynamic range.
-        // https://spark.apache.org/docs/1.5.2/api/java/org/apache/spark/ml/feature/MinMaxScaler.html
-        val scaler = new MinMaxScaler()
-          .setInputCol("features")
-          .setOutputCol("scaledFeatures")
-
-        // An alternative could be mean/std scaling
-        // Or several other options: https://spark.apache.org/docs/1.5.2/api/java/org/apache/spark/ml/Estimator.html
-        /*
-        val scaler = new StandardScaler()
-          .setInputCol("features")
-          .setOutputCol("scaledFeatures")
-        */
-
-        //This line performs the transformation
-        val scaledDF =  scaler.fit(withFeatures).transform(withFeatures)
-
-        //Drop temporary features:  featurescolumn, maxcycle
-        scaledDF.drop("features")
-                .drop("maxcycle")
-
+    scaledDF.drop("features").drop("maxcycle")
   }
 }
 
 
 object PrepareTrainData extends PrepareData {
-  case class Params(input: String = null,output: String = null)
+  case class Params(input: String = null, output: String = null)
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("Prepare train data for sds") {
       head("PrepareData")
-        arg[String]("<input_tsv>")
+      arg[String]("<input_tsv>")
         .required()
         .text("hdfs input paths tsv dataset ")
         .action((x, c) => c.copy(input = x.trim))
@@ -318,163 +235,117 @@ object PrepareTrainData extends PrepareData {
         """.stripMargin)
     }
 
-
-    parser.parse(args, defaultParams).map { params =>
-      run(params)
-    } getOrElse {
-      System.exit(1)
+    parser.parse(args, defaultParams) match {
+      case Some(params) => run(params)
+      case None         => System.exit(1)
     }
   }
 
-  def run(params: Params) {
+  def run(params: Params): Unit = {
 
-      //Initialiaze Spark: http://spark.apache.org/docs/latest/programming-guide.html#initializing-spark
-      val conf = new SparkConf().setAppName("PrepareData")
-      val sc = new SparkContext(conf)
-      val sqlContext = new HiveContext(sc)  //Initialiaze Hive: https://hive.apache.org/
+    val spark = SparkSession.builder()
+      .appName("PrepareTrainData")
+      .enableHiveSupport()
+      .getOrCreate()
 
-      import sqlContext.implicits._ //https://spark.apache.org/docs/1.5.1/api/java/org/apache/spark/sql/SQLContext.implicits$.html
+    val df = readDataFile(spark, params.input)
 
-      val df = readDataFile(sqlContext,params.input)
+    df.cache()
 
-      df.cache() // Tell Spark to (try to) keep the data in memory. See: http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence
+    val (_, operationModePredictions) = kMeansForOperationalModes(spark, df)
+    val withOPMode = addOPmode(spark, df, operationModePredictions)
+    val withrul   = addRULtrain(spark, withOPMode)
+    val withlabels = addLabels(spark, withrul)
+    val withMeans = calculateMeanSdev(spark, withlabels)
+    val scaledDF  = scaleFeatures(spark, withMeans)
 
-      //Group the data by operation modes
-      val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
+    scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
 
-      // Add operational modes to the dataframe
-      val withOPMode: DataFrame = addOPmode(sqlContext,df, operationModePredictions)
+    scaledDF.write.mode(SaveMode.Overwrite)
+      .option("header", "true")
+      .csv(params.output.concat(".csv"))
 
-      //Calculates the remaining useful life (RUL), creates the labels and add them to the DataFrame
-      val withrul: DataFrame = addRULtrain(sqlContext,withOPMode)
+    withMeans.write.mode(SaveMode.Overwrite)
+      .option("header", "true")
+      .csv(params.output.concat("_unscaled.csv"))
 
-
-      val withlabels: DataFrame = addLabels(sqlContext,withrul)
-
-      //Calculate means and standard over a time window
-      val withMeans: DataFrame = calculateMeanSdev(sqlContext,withlabels)
-
-      val scaledDF: DataFrame = scaleFeatures(sqlContext,withMeans)
-
-
-
-      //Write the result into parquet format.
-      scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
-
-
-      //Optionally save as CSV (for debugging purposes)
-      scaledDF.write.mode(SaveMode.Overwrite)
-            .format("com.databricks.spark.csv")
-            .option("header", "true")
-            .save(params.output.concat(".csv"))
-
-      withMeans.write.mode(SaveMode.Overwrite)
-            .format("com.databricks.spark.csv")
-            .option("header", "true")
-            .save(params.output.concat("_unscaled.csv"))
-
-
-      sc.stop()
-    }
+    spark.stop()
+  }
 }
 
 
 object PrepareTestData extends PrepareData {
 
-  case class Params(input: String = null,truth: String = null,output: String = null,disablecsv:Boolean = false)
+  case class Params(input: String = null, truth: String = null, output: String = null, disablecsv: Boolean = false)
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("Prepare test data for sds") {
       head("PrepareTestData")
       arg[String]("<input_data_tsv>")
-      .required()
-      .text("hdfs input paths tsv dataset ")
-      .action((x, c) => c.copy(input = x.trim))
+        .required()
+        .text("hdfs input paths tsv dataset ")
+        .action((x, c) => c.copy(input = x.trim))
       arg[String]("<truth_tsv>")
-      .required()
-      .text("hdfs input paths tsv dataset ")
-      .action((x, c) => c.copy(truth = x.trim))
+        .required()
+        .text("hdfs input paths tsv dataset ")
+        .action((x, c) => c.copy(truth = x.trim))
       arg[String]("<output_parquet>")
-      .required()
-      .text("hdfs output paths parquet output ")
-      .action((x, c) => c.copy(output = x.trim))
-      opt[Unit]("disablecsv") action { (_, c) =>
-        c.copy(disablecsv = true) } text("disablecsv is a flag if false to not write csv")
+        .required()
+        .text("hdfs output paths parquet output ")
+        .action((x, c) => c.copy(output = x.trim))
+      opt[Unit]("disablecsv").action { (_, c) =>
+        c.copy(disablecsv = true)
+      }.text("disablecsv is a flag if false to not write csv")
       note(
         """
-        |For example, the following command runs this app on a  dataset:
-        |
-        | spark-submit --class com.combient.sparkjob.tedsds.PrepareTrainData \
-        |  jarfile.jar \
-        |  "/share/tedsds/input/test_FD001.txt" \
-        |  "/share/tedsds/input/RUL_FD001.txt" \
-        |  "/share/tedsds/scaleddftest_FD001/"
+          |For example, the following command runs this app on a  dataset:
+          |
+          | spark-submit --class com.combient.sparkjob.tedsds.PrepareTrainData \
+          |  jarfile.jar \
+          |  "/share/tedsds/input/test_FD001.txt" \
+          |  "/share/tedsds/input/RUL_FD001.txt" \
+          |  "/share/tedsds/scaleddftest_FD001/"
         """.stripMargin)
-      }
-
-
-      parser.parse(args, defaultParams).map { params =>
-        run(params)
-      } getOrElse {
-        System.exit(1)
-      }
     }
 
-    def run(params: Params) {
-
-      //Initialiaze Spark: http://spark.apache.org/docs/latest/programming-guide.html#initializing-spark
-      val conf = new SparkConf().setAppName("PrepareData")
-      val sc = new SparkContext(conf)
-      val sqlContext = new HiveContext(sc)  //Initialiaze Hive: https://hive.apache.org/
-
-      import sqlContext.implicits._ //https://spark.apache.org/docs/1.5.1/api/java/org/apache/spark/sql/SQLContext.implicits$.html
-
-      //Reads the data from disc and create a Spark DataFrame (~a data table)
-      val df = readDataFile(sqlContext,params.input)
-
-      //Read the truth
-      val truth = readRULFile(sqlContext,params.truth)
-
-
-      df.cache() // Tell Spark to keep the data in memory. See: http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence
-      truth.cache()
-
-      //Group the data by operation modes
-      val (model: KMeansModel, operationModePredictions: DataFrame) = kMeansForOperationalModes(sqlContext,df)
-
-      // Add operational modes to the dataframe
-      val withOPMode: DataFrame = addOPmode(sqlContext,df, operationModePredictions)
-
-      //Calculates the remaining useful life (RUL), creates the labels and add them to the DataFrame
-      val withrul: DataFrame = addRULtest(sqlContext,withOPMode,truth)
-
-      val withlabels: DataFrame = addLabels(sqlContext,withrul)
-
-      //Calculate means and standard over a time window
-      val withMeans: DataFrame = calculateMeanSdev(sqlContext,withlabels)
-
-      //Scale the features
-      val scaledDF: DataFrame = scaleFeatures(sqlContext,withMeans)
-
-
-      //Write the result into parquet format.
-      scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
-
-
-      if(params.disablecsv){
-        //Optionally save as CSV (for debugging purposes)
-        scaledDF.write.mode(SaveMode.Overwrite)
-                      .format("com.databricks.spark.csv")
-                      .option("header", "true")
-                      .save(params.output.concat(".csv"))
-        withMeans.write.mode(SaveMode.Overwrite)
-                      .format("com.databricks.spark.csv")
-                      .option("header", "true")
-                      .save(params.output.concat("_unscaled.csv"))
-      }
-      sc.stop()
+    parser.parse(args, defaultParams) match {
+      case Some(params) => run(params)
+      case None         => System.exit(1)
     }
-
   }
+
+  def run(params: Params): Unit = {
+
+    val spark = SparkSession.builder()
+      .appName("PrepareTestData")
+      .enableHiveSupport()
+      .getOrCreate()
+
+    val df    = readDataFile(spark, params.input)
+    val truth = readRULFile(spark, params.truth)
+
+    df.cache()
+    truth.cache()
+
+    val (_, operationModePredictions) = kMeansForOperationalModes(spark, df)
+    val withOPMode = addOPmode(spark, df, operationModePredictions)
+    val withrul    = addRULtest(spark, withOPMode, truth)
+    val withlabels = addLabels(spark, withrul)
+    val withMeans  = calculateMeanSdev(spark, withlabels)
+    val scaledDF   = scaleFeatures(spark, withMeans)
+
+    scaledDF.write.mode(SaveMode.Overwrite).parquet(params.output)
+
+    if (params.disablecsv) {
+      scaledDF.write.mode(SaveMode.Overwrite)
+        .option("header", "true")
+        .csv(params.output.concat(".csv"))
+      withMeans.write.mode(SaveMode.Overwrite)
+        .option("header", "true")
+        .csv(params.output.concat("_unscaled.csv"))
+    }
+    spark.stop()
+  }
+}

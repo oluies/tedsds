@@ -1,16 +1,15 @@
 package com.spotify.spark
 
-
-import org.apache.spark._
-import org.apache.spark.mllib.recommendation.{Rating, ALS}
+import org.apache.spark.mllib.recommendation.{ALS, Rating}
+import org.apache.spark.sql.SparkSession
 import org.apache.hadoop.io.compress.GzipCodec
 
 object ImplicitALS {
 
-  def main(args: Array[String]) {
-    val conf = new SparkConf().setAppName("SimpleExample")
+  def main(args: Array[String]): Unit = {
+    val spark = SparkSession.builder().appName("ImplicitALS").getOrCreate()
+    val sc = spark.sparkContext
 
-    val sc = new SparkContext(conf)
     val input = args(1)
     val output = args(2)
 
@@ -24,10 +23,10 @@ object ImplicitALS {
     model
       .productFeatures
       .map { case (id, vec) =>
-        id + "\t" + vec.map(d => "%.6f".format(d)).mkString(" ")
+        s"$id\t${vec.map(d => "%.6f".format(d)).mkString(" ")}"
       }
       .saveAsTextFile(output, classOf[GzipCodec])
 
-    sc.stop()
+    spark.stop()
   }
 }

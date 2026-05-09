@@ -2,24 +2,23 @@ name := "tedsds"
 
 version := "1.0"
 
-scalaVersion := "2.10.6"
+scalaVersion := "2.13.14"
 
-resolvers += "bintray-spark-packages" at "https://dl.bintray.com/spark-packages/maven/"
+val sparkVersion = "3.5.1"
 
-sparkVersion := "1.6.0"
+resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
 
-sparkComponents ++= Seq("streaming", "sql","mllib","graphx","hive")
+libraryDependencies ++= Seq(
+  "org.apache.spark" %% "spark-core"      % sparkVersion % Provided,
+  "org.apache.spark" %% "spark-sql"       % sparkVersion % Provided,
+  "org.apache.spark" %% "spark-hive"      % sparkVersion % Provided,
+  "org.apache.spark" %% "spark-streaming" % sparkVersion % Provided,
+  "org.apache.spark" %% "spark-mllib"     % sparkVersion % Provided,
+  "org.apache.spark" %% "spark-graphx"    % sparkVersion % Provided,
+  "com.github.scopt" %% "scopt"           % "4.1.0"
+)
 
-spDependencies += "com.databricks/spark-csv_2.10:1.4.0"
-
-resolvers += "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/"
-
-resolvers += "Hortonworks Releases" at "http://repo.hortonworks.com/content/repositories/releases/"
-
-libraryDependencies ++= {
-  val akkaV = "2.3.0"
-  val sprayV = "1.3.1"
-  Seq(
-    "com.github.scopt" %% "scopt" % "3.4.0"
-  )
+ThisBuild / assemblyMergeStrategy := {
+  case PathList("META-INF", _ @ _*) => MergeStrategy.discard
+  case _                            => MergeStrategy.first
 }

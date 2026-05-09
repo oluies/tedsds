@@ -23,20 +23,19 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{Row, SQLContext}
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.sql.{Row, SparkSession}
 import scopt.OptionParser
 
 object RunLogisticRegressionWithValidationData {
 
-  case class Params(input: String = null,model: String = null,label: Int = 2)
+  case class Params(input: String = null, model: String = null, label: Int = 2)
 
   def main(args: Array[String]): Unit = {
 
     val defaultParams = Params()
 
     val parser = new OptionParser[Params]("MulticlassMetricsFortedsds") {
-      head("RunLogisticRegressionWithLBFGS: a http://spark.apache.org/docs/latest/mllib-linear-methods.html example app for ALS on dataset A. Saxena and K. Goebel (2008). “Turbofan Engine Degradation Simulation Data Set”, NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA.")
+      head("RunLogisticRegressionWithLBFGS")
       arg[String]("<input>")
         .required()
         .text("hdfs input paths to a parquet dataset ")
@@ -45,7 +44,7 @@ object RunLogisticRegressionWithValidationData {
         .optional()
         .text("hdfs output paths saved model ")
         .action((x, c) => c.copy(model = x.trim))
-      opt[Int]('l',"label")
+      opt[Int]('l', "label")
         .optional()
         .action { (x, c) => c.copy(label = x) }
         .text("What label to use")
@@ -61,47 +60,29 @@ object RunLogisticRegressionWithValidationData {
         """.stripMargin)
     }
 
-
-    parser.parse(args, defaultParams).map { params =>
-      run(params)
-    } getOrElse {
-      System.exit(1)
+    parser.parse(args, defaultParams) match {
+      case Some(params) => run(params)
+      case None         => System.exit(1)
     }
-
   }
 
-  def run(params: Params) {
+  def run(params: Params): Unit = {
 
-    //Start Spark context
-    val conf = new SparkConf().setAppName(s"RunRandomForest2 with $params")
-    val sc = new SparkContext(conf)
+    val spark = SparkSession.builder()
+      .appName(s"RunLogisticRegressionWithValidationData with $params")
+      .getOrCreate()
+    val sc = spark.sparkContext
 
-    //Chose which label to use
-    var labeltouse : String = "label2"
-    var nbClasses : Int = 3
+    val (labeltouse, nbClasses) =
+      if (params.label == 1) ("label1", 2) else ("label2", 3)
 
-    if (params.label == 1 ){
-      labeltouse = "label1"
-      nbClasses = 2
-    }
-
-    //Print information about the model
-    val input = params.input
-    val output = params.model
     println("Logistic regression with validation data")
-    println(s"Input dataset = $input")
-    println(s"Output file = $output")
+    println(s"Input dataset = ${params.input}")
+    println(s"Output file = ${params.model}")
     println(s"Using $labeltouse")
 
+    val scaledDF = spark.read.parquet(params.input)
 
-    // see https://spark.apache.org/docs/latest/mllib-evaluation-metrics.html
-    val sqlContext = new SQLContext(sc)
-    // Load training data
-    val scaledDF = sqlContext.read.parquet(input)
-
-
-    // Index labels, adding metadata to the label column.
-    // Fit on whole dataset to include all labels in index.
     val labelIndexer = new StringIndexer()
       .setInputCol(labeltouse)
       .setOutputCol("indexedLabel")
@@ -109,56 +90,40 @@ object RunLogisticRegressionWithValidationData {
 
     val indexed = labelIndexer.transform(scaledDF)
 
-    //Create an RDD suitable for the ML algorithm
-    import sqlContext.implicits._
-    val dataRDD : RDD[LabeledPoint] = indexed
+    import spark.implicits._
+    val dataRDD: RDD[LabeledPoint] = indexed
       .select($"indexedLabel", $"scaledFeatures")
-      .map{case Row(indexedLabel: Double, scaledFeatures: Vector) => LabeledPoint(indexedLabel, scaledFeatures)}
+      .rdd
+      .map { case Row(indexedLabel: Double, scaledFeatures: Vector) =>
+        LabeledPoint(indexedLabel, scaledFeatures)
+      }
 
-    //***********************************
-    // Split data into training (80%) and test (20%)
     val Array(training, validation) = dataRDD.randomSplit(Array(0.80, 0.20), seed = 11L)
     training.cache()
-    //***********************************
 
-    // Run training algorithm to build the model
     val model = new LogisticRegressionWithLBFGS()
       .setNumClasses(nbClasses)
       .run(training)
 
-    // Predict the labels of the TRAINING data
     val predictionAndLabelsTrain = training.map { case LabeledPoint(label, features) =>
       val prediction = model.predict(features)
       (prediction, label)
     }
 
-
-    //***********************************
-    // Predict the labels of the VALIDATION data
     val predictionAndLabelsValidation = validation.map { case LabeledPoint(label, features) =>
       val prediction = model.predict(features)
       (prediction, label)
     }
 
-    // Save the model
-    if(params.model != ""){
-      model.save(sc,"%s".format(params.model))
+    if (params.model != null && params.model != "") {
+      model.save(sc, "%s".format(params.model))
       print("Saved model as %s".format(params.model))
     }
 
-    // Evaluate the model on the TRAINING data
-    ModelEvaluator.evaluatePrediction(predictionAndLabelsTrain,"Logistic Classifier --- Training set")
+    ModelEvaluator.evaluatePrediction(predictionAndLabelsTrain, "Logistic Classifier --- Training set")
+    ModelEvaluator.evaluatePrediction(predictionAndLabelsValidation, "Logistic Classifier --- Validation set")
 
-    // Evaluate the model on the VALIDATION data
-    ModelEvaluator.evaluatePrediction(predictionAndLabelsValidation,"Logistic Classifier --- Validation set")
-
-    //***********************************
-
-
-
-    //Stop the sparkContext
-    sc.stop()
-
+    spark.stop()
   }
 }
 // scalastyle:on println
