@@ -2,7 +2,7 @@ name := "tedsds"
 
 version := "1.0"
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.18"
 
 val sparkVersion = "3.5.1"
 
