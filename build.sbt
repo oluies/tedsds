@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.13.14"
 
-val sparkVersion = "3.5.1"
+val sparkVersion = "3.5.9"
 
 resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
 
