@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-streaming" % sparkVersion % Provided,
   "org.apache.spark" %% "spark-mllib"     % sparkVersion % Provided,
   "org.apache.spark" %% "spark-graphx"    % sparkVersion % Provided,
-  "com.github.scopt" %% "scopt"           % "4.1.0"
+  "com.github.scopt" %% "scopt"           % "4.2.0"
 )
 
 ThisBuild / assemblyMergeStrategy := {
