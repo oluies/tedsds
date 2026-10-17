@@ -2,9 +2,9 @@ name := "tedsds"
 
 version := "1.0"
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.18"
 
-val sparkVersion = "3.5.1"
+val sparkVersion = "4.2.0"
 
 resolvers += "Typesafe Releases" at "https://repo.typesafe.com/typesafe/releases/"
 
@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-streaming" % sparkVersion % Provided,
   "org.apache.spark" %% "spark-mllib"     % sparkVersion % Provided,
   "org.apache.spark" %% "spark-graphx"    % sparkVersion % Provided,
-  "com.github.scopt" %% "scopt"           % "4.1.0"
+  "com.github.scopt" %% "scopt"           % "4.2.0"
 )
 
 ThisBuild / assemblyMergeStrategy := {
