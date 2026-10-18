@@ -1,6 +1,27 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
+  "extends": ["config:recommended"],
+  "description": [
+    "Replaces .github/dependabot.yml, so one bot owns dependency updates here.",
+    "Renovate was already running this repository -- the sbt 2, Scala 2.13.18 and",
+    "Spark 4 bumps all came through it -- while Dependabot was configured for the",
+    "same two ecosystems. This removes that overlap.",
+    "",
+    "There is no Scala Steward here, so Renovate covers the sbt build itself."
+  ],
+  "schedule": ["before 6am on monday"],
+  "timezone": "Europe/Stockholm",
+  "prConcurrentLimit": 10,
+  "packageRules": [
+    {
+      "description": "Was the sbt ecosystem in .github/dependabot.yml: weekly, open-pull-requests-limit 10. Grouped, which Dependabot was not doing -- twelve separate bump PRs were open here at once before.",
+      "matchManagers": ["sbt"],
+      "groupName": "sbt dependencies"
+    },
+    {
+      "description": "Was the github-actions ecosystem: weekly, limit 5. Grouped into one PR.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    }
   ]
 }
